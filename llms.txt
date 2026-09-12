@@ -1,0 +1,33 @@
+# BgClear
+
+> Free online background remover tool. Remove image backgrounds instantly, in your browser, with no signup, no watermark, and no image uploaded to a server. Supports bulk processing of up to 20 images at once.
+
+## About
+BgClear is a 100% free, ad-supported AI background remover. Upload a JPG, PNG, or WebP photo (up to 10MB) and BgClear removes the background using an in-browser AI model, then lets you download a transparent PNG. No account, no credit card, no watermark.
+
+## Key Pages
+- Homepage / Tool: https://bg-remover-free.netlify.app/ — Upload a photo and remove the background free, in bulk (up to 20 images)
+- Guide: https://bg-remover-free.netlify.app/guide.html — Complete guide to background removal techniques and best practices
+- How AI Works: https://bg-remover-free.netlify.app/how-ai-works.html — How the AI background removal technology works
+- BgClear vs Remove.bg: https://bg-remover-free.netlify.app/vs-removebg.html — Feature and pricing comparison
+- Passport Photo: https://bg-remover-free.netlify.app/passport-photo.html — Create passport/ID photos with a white background
+- E-commerce Photos: https://bg-remover-free.netlify.app/ecommerce-photos.html — Remove backgrounds from product photos for Amazon, Flipkart, Meesho
+- About: https://bg-remover-free.netlify.app/about.html
+- Contact: https://bg-remover-free.netlify.app/contact.html
+- Privacy Policy: https://bg-remover-free.netlify.app/privacy-policy.html
+
+## Languages
+- English (default): https://bg-remover-free.netlify.app/
+- Hindi: https://bg-remover-free.netlify.app/hindi.html
+- Italian: https://bg-remover-free.netlify.app/it.html
+- French: https://bg-remover-free.netlify.app/fr.html
+- German: https://bg-remover-free.netlify.app/de.html
+- Turkish: https://bg-remover-free.netlify.app/tr.html
+
+## Technical
+- Processing happens client-side in the browser (no image upload to a server).
+- Supported formats: JPG, PNG, WebP (up to 10MB).
+- No signup, no watermark, free tier has no limits on number of images.
+
+## Contact
+See https://bg-remover-free.netlify.app/contact.html

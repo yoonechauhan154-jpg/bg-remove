@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supprimer l'Arrière-plan Gratuit — Fond Transparent en Ligne</title>
+  <meta name="description" content="Supprimez l'arrière-plan d'une image gratuitement — sans inscription, sans filigrane, 100% privé. Importez JPG, PNG ou WebP et téléchargez le PNG.">
+  <meta name="keywords" content="supprimer arrière-plan gratuit, enlever fond image en ligne, fond transparent gratuit, bg remover">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BgClear">
+  <link rel="canonical" href="https://bg-remover-free.netlify.app/fr">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23667eea'/%3E%3Cstop%20offset='1'%20stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='url(%23g)'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial,sans-serif'%20font-size='26'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EBG%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Supprimer l'Arrière-plan Gratuit — Fond Transparent en Ligne">
+  <meta property="og:description" content="Supprimez l'arrière-plan d'une image gratuitement — sans inscription, sans filigrane, 100% privé. Importez JPG, PNG ou WebP et téléchargez le PNG.">
+  <meta property="og:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://bg-remover-free.netlify.app/fr">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BgClear">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Supprimer l'Arrière-plan Gratuit — Fond Transparent en Ligne">
+  <meta name="twitter:description" content="Supprimez l'arrière-plan d'une image gratuitement — sans inscription, sans filigrane, 100% privé. Importez JPG, PNG ou WebP et téléchargez le PNG.">
+  <meta name="twitter:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <link rel="alternate" hreflang="en" href="https://bg-remover-free.netlify.app/">
+  <link rel="alternate" hreflang="hi" href="https://bg-remover-free.netlify.app/hindi">
+  <link rel="alternate" hreflang="it" href="https://bg-remover-free.netlify.app/it">
+  <link rel="alternate" hreflang="fr" href="https://bg-remover-free.netlify.app/fr">
+  <link rel="alternate" hreflang="de" href="https://bg-remover-free.netlify.app/de">
+  <link rel="alternate" hreflang="tr" href="https://bg-remover-free.netlify.app/tr">
+  <link rel="alternate" hreflang="x-default" href="https://bg-remover-free.netlify.app/">
+  <link rel="alternate" hreflang="x-default" href="https://bg-remover-free.netlify.app/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BgClear — Suppression d'Arrière-plan Gratuite",
+  "url": "https://bg-remover-free.netlify.app/fr",
+  "description": "Suppression d'arrière-plan gratuite par IA, prise en charge de plusieurs images",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "fr",
+  "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+}
+</script>
+<style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --purple: #667eea;
+      --blue: #764ba2;
+      --shadow: 0 18px 45px rgba(31, 41, 55, 0.1);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 10px 24px rgba(102, 126, 234, 0.3);
+    }
+
+    .header-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 16px;
+      max-width: 620px;
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #475569;
+      background: #fff;
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .tool-card {
+      padding: 24px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .upload-area {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 350px;
+      padding: 34px;
+      border: 2px dashed #c7d2fe;
+      border-radius: 16px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(102, 126, 234, 0.1), transparent 34%),
+        #fbfcff;
+      transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+      cursor: pointer;
+    }
+
+    .upload-area.drag-over {
+      border-color: var(--purple);
+      background:
+        radial-gradient(circle at top left, rgba(102, 126, 234, 0.18), transparent 34%),
+        #f8faff;
+      transform: translateY(-2px);
+    }
+
+    .upload-icon {
+      display: grid;
+      place-items: center;
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 18px;
+      border-radius: 24px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 18px 36px rgba(102, 126, 234, 0.28);
+    }
+
+    .upload-title {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .upload-text {
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .file-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 14px 28px rgba(102, 126, 234, 0.26);
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(102, 126, 234, 0.32);
+    }
+
+    .btn.secondary {
+      color: #475569;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .status {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 350px;
+      padding: 34px;
+      border-radius: 16px;
+      background: #fbfcff;
+      text-align: center;
+      color: #475569;
+      font-weight: 800;
+    }
+
+    .spinner {
+      width: 34px;
+      height: 34px;
+      border: 4px solid #e0e7ff;
+      border-top-color: var(--purple);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .result { display: none; }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .preview-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+    }
+
+    .preview-panel h2 {
+      margin: 0;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 1rem;
+    }
+
+    .image-stage {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1 / 1;
+      min-height: 240px;
+      padding: 14px;
+      background: #f8fafc;
+    }
+
+    .checkerboard {
+      background-color: #fff;
+      background-image:
+        linear-gradient(45deg, #e5e7eb 25%, transparent 25%),
+        linear-gradient(-45deg, #e5e7eb 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e5e7eb 75%),
+        linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+      background-size: 24px 24px;
+    }
+
+    .image-stage img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+
+    .export-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      background: #f9fafb;
+      border: 1px solid var(--line);
+    }
+
+    .export-options label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .export-options select,
+    .export-options input[type="color"] {
+      font: inherit;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .export-options input[type="color"] {
+      width: 44px;
+      height: 38px;
+      padding: 3px;
+    }
+    .error {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      color: #991b1b;
+      background: #fff1f2;
+      line-height: 1.45;
+    }
+
+    .content-section {
+      margin-top: 36px;
+      padding: 30px;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      box-shadow: 0 10px 28px rgba(31, 41, 55, 0.06);
+    }
+
+    .content-section h2 {
+      margin: 0 0 12px;
+      font-size: 1.55rem;
+    }
+
+    .content-section p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .steps-grid,
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .step-card,
+    .feature-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .step-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+      color: #fff;
+      font-size: 1.15rem;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 10px 22px rgba(102, 126, 234, 0.22);
+    }
+
+    .step-card h3,
+    .feature-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.04rem;
+    }
+
+    .site-footer {
+      margin-top: 28px;
+      color: #64748b;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { text-align: center; }
+      .hero-copy p,
+      .hero-copy h1 { margin-left: auto; margin-right: auto; }
+      .trust-row { justify-content: center; }
+    }
+
+    @media (max-width: 640px) {
+      .page { width: min(100% - 22px, 1120px); padding-top: 18px; }
+      .site-header { align-items: flex-start; flex-direction: column; }
+      .header-note { text-align: left; }
+      .tool-card,
+      .content-section { padding: 18px; border-radius: 15px; }
+      .upload-area,
+      .status { min-height: 300px; padding: 24px 16px; }
+      .preview-grid { grid-template-columns: 1fr; }
+      .steps-grid,
+      .features-grid { grid-template-columns: 1fr; }
+      .image-stage { min-height: 220px; }
+      .actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header" aria-label="Site header">
+      <div class="brand" aria-label="BgClear">
+        <span class="brand-mark" aria-hidden="true">BG</span>
+        <span>BgClear</span>
+      </div>
+      <div class="header-note">Suppression d'arrière-plan gratuite par IA. Sans inscription. Sans filigrane.</div>
+    </header>
+
+    <section class="hero" aria-labelledby="main-title">
+      <div class="hero-copy">
+        <h1 id="main-title">Suppression d'Arrière-plan Gratuite</h1>
+        <p>Importez votre photo JPG, PNG ou WebP et BgClear supprime l'arrière-plan directement dans votre navigateur grâce à l'IA, prête à télécharger en PNG transparent. Après traitement, placez le découpage sur un fond blanc ou de n'importe quelle couleur et téléchargez-le en PNG, JPG ou WebP.</p>
+        <div class="trust-row" aria-label="Highlights">
+          <span class="pill">100% Gratuit</span>
+          <span class="pill">Aucune clé API</span>
+          <span class="pill">PNG Transparent</span>
+        </div>
+      </div>
+
+      <section class="tool-card" aria-label="Background remover tool">
+        <div id="uploadArea" class="upload-area" role="button" tabindex="0" aria-label="Importer une photo">
+          <input id="fileInput" class="file-input" type="file" accept="image/jpeg,image/png,image/webp">
+          <div>
+            <div class="upload-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" role="img" aria-label="">
+                <path d="M12 16V4m0 0 4.5 4.5M12 4 7.5 8.5M4 16.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="upload-title">Importez votre photo</p>
+            <p class="upload-text">Glissez-déposez votre photo ici ou cliquez sur le bouton ci-dessous.</p>
+            <button id="uploadButton" class="btn" type="button">Choisir une photo</button>
+          </div>
+        </div>
+
+        <div id="status" class="status" aria-live="polite" aria-label="Processing status">
+          <div class="spinner" aria-hidden="true"></div>
+          <span>Traitement en cours...</span>
+        </div>
+
+        <div id="result" class="result">
+          <div class="preview-grid">
+            <article class="preview-panel">
+              <h2>Avant</h2>
+              <div class="image-stage">
+                <img id="beforeImage" alt="Photo originale importée">
+              </div>
+            </article>
+            <article class="preview-panel">
+              <h2>Après</h2>
+              <div class="image-stage checkerboard">
+                <img id="afterImage" alt="Photo après suppression de l'arrière-plan">
+              </div>
+            </article>
+          </div>
+
+          <div class="export-options" aria-label="Export options">
+            <label for="bgSelect">Fond:
+              <select id="bgSelect">
+                <option value="" selected>Transparent</option>
+                <option value="#ffffff">Blanc</option>
+                <option value="#000000">Noir</option>
+                <option value="custom">Personnalisé…</option>
+              </select>
+            </label>
+            <label for="bgColor">Couleur:
+              <input type="color" id="bgColor" value="#00a2ff" hidden>
+            </label>
+            <label for="formatSelect">Format:
+              <select id="formatSelect">
+                <option value="png" selected>PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="webp">WebP</option>
+              </select>
+            </label>
+          </div>
+          <div class="actions">
+            <a id="downloadButton" class="btn" href="#" download="bgclear-background-removed.png">Télécharger le PNG</a>
+            <button id="resetButton" class="btn secondary" type="button">Importer une autre photo</button>
+          </div>
+        </div>
+
+        <div id="errorBox" class="error" role="alert"></div>
+      </section>
+    </section>
+
+    <section class="content-section" aria-labelledby="steps-title">
+      <h2 id="steps-title">Supprimez l'Arrière-plan en 3 Étapes Simples</h2>
+      <p>Avec BgClear, supprimez l'arrière-plan de votre photo et obtenez un PNG transparent en quelques clics.</p>
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-icon" aria-hidden="true">1</div>
+          <h3>Importer une photo</h3>
+          <p>Choisissez ou glissez une photo JPG, PNG ou WebP.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-icon" aria-hidden="true">2</div>
+          <h3>Supprimer l'Arrière-plan</h3>
+          <p>L'IA identifie le sujet principal et supprime l'arrière-plan.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-icon" aria-hidden="true">3</div>
+          <h3>Télécharger le PNG</h3>
+          <p>Comparez avant/après, puis téléchargez votre PNG transparent.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="why-title">
+      <h2 id="why-title">Pourquoi Utiliser Notre Outil ?</h2>
+      <p>BgClear est le moyen le plus simple et le plus rapide de supprimer l'arrière-plan de vos photos, gratuitement.</p>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>Outil en Ligne Gratuit</h3>
+          <p>Supprimez l'arrière-plan sans coûts cachés et sans créer de compte.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Traitement dans le Navigateur</h3>
+          <p>Votre photo est traitée directement dans votre navigateur, vos données restent donc sécurisées.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Utilisable Partout</h3>
+          <p>Fonctionne facilement sur mobile, tablette ou ordinateur.</p>
+        </article>
+      </div>
+    </section>
+
+        <nav aria-label="More guides and languages" style="margin-top:24px;padding-top:20px;border-top:1px solid #e5e7eb;">
+      <div style="font-size:0.8rem;color:#6b7280;margin-bottom:10px;">More guides &amp; languages:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="car-vehicle-photo-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🚗 Car & Vehicle Photos</a>
+        <a href="food-photography-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🍔 Food Photography</a>
+        <a href="real-estate-photo-editing.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🏠 Real Estate Photos</a>
+        <a href="transparent-images-presentations.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🖼️ Transparent for Presentations</a>
+        <a href="tshirt-apparel-mockup-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">👕 T-Shirt & Apparel Mockups</a>
+        <a href="hindi.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇮🇳 हिंदी में इस्तेमाल करें</a>
+        <a href="it.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇮🇹 Usa in Italiano</a>
+        <a href="de.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇩🇪 Auf Deutsch nutzen</a>
+        <a href="tr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇹🇷 Türkçe Kullanın</a>
+      </div>
+    </nav>
+    <footer class="site-footer">
+      BgClear — Suppression d'arrière-plan photo en ligne gratuite.
+    </footer>
+  </main>
+
+  <script>
+    const REQUESTED_CDN_URL = "https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/background-removal.js";
+    const CDN_URL = "https://esm.sh/@imgly/background-removal@1.4.5?bundle";
+
+    const uploadArea = document.getElementById("uploadArea");
+    const uploadButton = document.getElementById("uploadButton");
+    const fileInput = document.getElementById("fileInput");
+    const statusBox = document.getElementById("status");
+    const resultBox = document.getElementById("result");
+    const errorBox = document.getElementById("errorBox");
+    const beforeImage = document.getElementById("beforeImage");
+    const afterImage = document.getElementById("afterImage");
+    const downloadButton = document.getElementById("downloadButton");
+    const resetButton = document.getElementById("resetButton");
+    const bgSelect = document.getElementById("bgSelect");
+    const bgColor = document.getElementById("bgColor");
+    const formatSelect = document.getElementById("formatSelect");
+
+    let originalUrl = "";
+    let resultUrl = "";
+    let removeBackgroundPromise = null;
+    let currentBlob = null;
+    let exportOptions = { bg: "", format: "png" };
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.style.display = "block";
+    }
+
+    function clearError() {
+      errorBox.textContent = "";
+      errorBox.style.display = "none";
+    }
+
+    function revokePreviewUrls() {
+      if (originalUrl) URL.revokeObjectURL(originalUrl);
+      if (resultUrl) URL.revokeObjectURL(resultUrl);
+      originalUrl = "";
+      resultUrl = "";
+    }
+
+    function setMode(mode) {
+      if (mode === "processing") {
+        statusBox.querySelector("span").textContent = "Traitement en cours...";
+      }
+      uploadArea.style.display = mode === "upload" ? "grid" : "none";
+      statusBox.style.display = mode === "processing" ? "flex" : "none";
+      resultBox.style.display = mode === "result" ? "block" : "none";
+    }
+
+    async function getRemoveBackground() {
+      if (removeBackgroundPromise) return removeBackgroundPromise;
+
+      removeBackgroundPromise = (async () => {
+        const globals = [
+          window.removeBackground,
+          window.imglyRemoveBackground && window.imglyRemoveBackground.removeBackground,
+          window.imglyBackgroundRemoval && window.imglyBackgroundRemoval.removeBackground,
+          window.backgroundRemoval && window.backgroundRemoval.removeBackground,
+          window.BackgroundRemoval && window.BackgroundRemoval.removeBackground
+        ].filter(Boolean);
+
+        if (globals.length) return globals[0];
+
+        const module = await import(CDN_URL);
+        return module.removeBackground || (module.default && module.default.removeBackground) || module.default;
+      })();
+
+      return removeBackgroundPromise;
+    }
+
+    function validateFile(file) {
+      const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+      if (!file) return "Veuillez sélectionner une photo.";
+      if (!allowedTypes.includes(file.type)) return "Veuillez importer une photo JPG, PNG ou WebP.";
+      return "";
+    }
+
+
+    function compositeBlob(blob, bg, format) {
+      if (!bg && format === "png") return Promise.resolve(blob);
+      return new Promise((resolve) => {
+        const url = URL.createObjectURL(blob);
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          const ctx = canvas.getContext("2d");
+          if (bg) {
+            ctx.fillStyle = bg;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+          }
+          ctx.drawImage(img, 0, 0);
+          URL.revokeObjectURL(url);
+          if (format === "jpg") {
+            canvas.toBlob(resolve, "image/jpeg", 0.92);
+          } else if (format === "webp") {
+            canvas.toBlob(resolve, "image/webp", 0.92);
+          } else {
+            canvas.toBlob(resolve, "image/png");
+          }
+        };
+        img.onerror = () => { URL.revokeObjectURL(url); resolve(blob); };
+        img.src = url;
+      });
+    }
+
+    async function setExportOptions(next) {
+      exportOptions = next;
+      if (!currentBlob) return;
+      const outBlob = await compositeBlob(currentBlob, exportOptions.bg, exportOptions.format);
+      const newUrl = URL.createObjectURL(outBlob);
+      if (resultUrl) URL.revokeObjectURL(resultUrl);
+      resultUrl = newUrl;
+      afterImage.src = newUrl;
+      downloadButton.href = newUrl;
+      const ext = exportOptions.format === "jpg" ? "jpg" : exportOptions.format;
+      downloadButton.download = `bgclear-background-removed.${ext}`;
+    }
+
+    async function processImage(file) {
+      const validationError = validateFile(file);
+      if (validationError) {
+        showError(validationError);
+        return;
+      }
+
+      clearError();
+      revokePreviewUrls();
+      setMode("processing");
+
+      originalUrl = URL.createObjectURL(file);
+      beforeImage.src = originalUrl;
+
+      try {
+        const removeBackground = await getRemoveBackground();
+
+        if (typeof removeBackground !== "function") {
+          throw new Error("The background removal library did not load correctly.");
+        }
+
+        const resultBlob = await removeBackground(file, {
+          model: "small",
+          proxyToWorker: true,
+          debug: false,
+          publicPath: "https://staticimgly.com/@imgly/background-removal-data/1.4.5/dist/",
+          fetchArgs: { credentials: "omit", mode: "cors", crossorigin: "anonymous" },
+          progress: (key, current, total) => {
+            if (key.startsWith("fetch:") && total) {
+              const percent = Math.round((current / total) * 100);
+              statusBox.querySelector("span").textContent = `Téléchargement modèle IA (1re fois) ${percent}%`;
+            }
+          },
+          output: {
+            format: "image/png",
+            quality: 1
+          }
+        });
+
+        currentBlob = resultBlob;
+        const outBlob = await compositeBlob(resultBlob, exportOptions.bg, exportOptions.format);
+        resultUrl = URL.createObjectURL(outBlob);
+        afterImage.src = resultUrl;
+        downloadButton.href = resultUrl;
+        downloadButton.download = `bgclear-background-removed.${exportOptions.format === "jpg" ? "jpg" : exportOptions.format}`;
+        setMode("result");
+      } catch (error) {
+        console.error(error);
+        setMode("upload");
+        const detail = error && error.message ? ` Détail : ${error.message}` : "";
+        showError(`Un problème est survenu lors de la suppression de l'arrière-plan. Vérifiez votre connexion internet et réessayez.${detail}`);
+      }
+    }
+
+    uploadArea.addEventListener("click", () => fileInput.click());
+    uploadButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      fileInput.click();
+    });
+
+    uploadArea.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        fileInput.click();
+      }
+    });
+
+    fileInput.addEventListener("change", (event) => {
+      processImage(event.target.files[0]);
+    });
+
+    ["dragenter", "dragover"].forEach((eventName) => {
+      uploadArea.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        uploadArea.classList.add("drag-over");
+      });
+    });
+
+    ["dragleave", "drop"].forEach((eventName) => {
+      uploadArea.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        uploadArea.classList.remove("drag-over");
+      });
+    });
+
+    uploadArea.addEventListener("drop", (event) => {
+      const file = event.dataTransfer.files[0];
+      processImage(file);
+    });
+
+
+    bgSelect.addEventListener("change", () => {
+      const val = bgSelect.value;
+      if (val === "custom") {
+        bgColor.hidden = false;
+        setExportOptions({ ...exportOptions, bg: bgColor.value });
+      } else {
+        bgColor.hidden = true;
+        setExportOptions({ ...exportOptions, bg: val });
+      }
+    });
+
+    bgColor.addEventListener("input", () => {
+      setExportOptions({ ...exportOptions, bg: bgColor.value });
+    });
+
+    formatSelect.addEventListener("change", () => {
+      setExportOptions({ ...exportOptions, format: formatSelect.value });
+    });
+
+    resetButton.addEventListener("click", () => {
+      fileInput.value = "";
+      beforeImage.removeAttribute("src");
+      afterImage.removeAttribute("src");
+      downloadButton.href = "#";
+      revokePreviewUrls();
+      clearError();
+      currentBlob = null;
+      exportOptions = { bg: "", format: "png" };
+      bgColor.hidden = true;
+      setMode("upload");
+    });
+  </script>
+</body>
+</html>

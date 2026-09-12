@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Before & After Gallery — Background Removal Results</title>
+  <meta name="description" content="Real before-and-after background removal results: product shots, portraits, pets, cars, and food — processed with BgClear's in-browser model." />
+  <meta name="keywords" content="background remover before after, background removal results, remove background examples, transparent background examples" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bg-remover-free.netlify.app/before-after-gallery" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23667eea'/%3E%3Cstop%20offset='1'%20stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='url(%23g)'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial,sans-serif'%20font-size='26'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EBG%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Before & After — Real BgClear Results">
+  <meta property="og:description" content="See what in-browser background removal does to product shots, portraits, pets, and cars.">
+  <meta property="og:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://bg-remover-free.netlify.app/before-after-gallery">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="BgClear">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Before & After — Real BgClear Results">
+  <meta name="twitter:description" content="See what in-browser background removal does to product shots, portraits, pets, and cars.">
+  <meta name="twitter:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --purple: #667eea;
+      --blue: #764ba2;
+      --shadow: 0 18px 45px rgba(31, 41, 55, 0.1);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 10px 24px rgba(102, 126, 234, 0.3);
+    }
+    .header-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+    .hero {
+      padding: 34px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.15;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .content-section {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .content-section h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+    .content-section h3 { margin: 18px 0 8px; font-size: 1.1rem; }
+    .content-section p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    .cta-box {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--blue);
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+    .site-footer {
+      margin-top: 28px;
+      color: #64748b;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: var(--purple);
+      font-weight: 700;
+    }
+    .cmp-table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 0.95rem; }
+    .cmp-table th, .cmp-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; color: var(--muted); }
+    .cmp-table th { background: #f8fafc; color: var(--text); font-weight: 800; }
+    .cmp-table tr:nth-child(even) td { background: #fbfcff; }
+    .faq-list details { border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 10px; padding: 0 16px; }
+    .faq-list summary { padding: 14px 0; font-weight: 800; cursor: pointer; color: var(--text); }
+    .faq-list details p { padding: 0 0 14px; margin: 0; color: var(--muted); }
+    .prose ul { margin: 0 0 14px; padding-left: 22px; }
+    .prose li { margin-bottom: 8px; color: var(--muted); }
+    .pros, .cons { list-style: none; padding-left: 0; margin: 10px 0 16px; }
+    .pros li, .cons li { padding-left: 24px; margin-bottom: 8px; color: var(--muted); position: relative; }
+    .pros li::before { content: "+"; position: absolute; left: 0; font-weight: 800; color: #16a34a; }
+    .cons li::before { content: "\2212"; position: absolute; left: 0; font-weight: 800; color: #dc2626; }
+    .guide-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+    .guide-links a { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.9rem; font-weight: 700; color: #1f2937; background: #f5f7fb; }
+    .guide-links a:hover { border-color: var(--purple); color: var(--purple); }
+    .source-note { font-size: 0.82rem; color: #94a3b8; }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 22px, 1120px); padding-top: 18px; }
+      .site-header { align-items: flex-start; flex-direction: column; }
+      .header-note { text-align: left; }
+      .hero, .content-section, .cta-box { padding: 18px; border-radius: 15px; }
+    }
+  </style>
+</head>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Before & After Gallery",
+  "description": "Real before-and-after background removal results: product shots, portraits, pets, cars, and food — processed with BgClear's in-browser model.",
+  "url": "https://bg-remover-free.netlify.app/before-after-gallery",
+  "image": "https://bg-remover-free.netlify.app/og-image.png",
+  "datePublished": "2026-08-01T00:00:00+05:30",
+  "dateModified": "2026-08-29T00:00:00+05:30",
+  "inLanguage": "en",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bg-remover-free.netlify.app/before-after-gallery"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "BgClear",
+    "url": "https://bg-remover-free.netlify.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BgClear",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bg-remover-free.netlify.app/og-image.png"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are these images processed on my device?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The examples shown here were processed with the same in-browser model used by the website. When you run your own photo, the processing happens locally in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do results on my photos match the gallery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quality depends on the photo. Clean, well-lit subjects with plain backgrounds give the best results — the same caveat applies to every background remover."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I submit my before/after to the gallery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Email us via the contact page. If we publish your example we'll ask for permission and keep it anonymous."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://bg-remover-free.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Before & After Gallery",
+      "item": "https://bg-remover-free.netlify.app/before-after-gallery"
+    }
+  ]
+}
+</script>
+
+<body>
+  <main class="page">
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="index.html" aria-label="BgClear home">
+        <span class="brand-mark" aria-hidden="true">BG</span>
+        <span>BgClear</span>
+      </a>
+      <div class="header-note">Free AI background remover. No signup. No watermark.</div>
+    </header>
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">Before & After Gallery</h1>
+      <p style="display:inline-block;padding:6px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;font-size:0.82rem;font-weight:700;color:#475569;margin-bottom:16px;">🔒 Your photo never leaves your device</p>
+      <p style="font-size:0.8rem;color:#64748b;margin:0 0 14px;">Last updated: September 10, 2026</p>
+      <p>Real examples of what the in-browser model does. Every image on this page was processed entirely in the browser — nothing was uploaded.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-1-title">
+      <h2 id="section-1-title">Product Photography</h2>
+      <p>Catalog shots come off cleanest because backgrounds are usually plain and well-lit. Results are ready for marketplaces that require a white or transparent backdrop.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-2-title">
+      <h2 id="section-2-title">Portraits & Pets</h2>
+      <p>Hair and fur are the honest test. On clean, well-lit photos the cutouts are crisp; on the hardest edges a quick touch-up helps, exactly as it would with any tool.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-3-title">
+      <h2 id="section-3-title">Cars & Food</h2>
+      <p>Vehicles and food shots remove cleanly when the background contrasts with the subject. Check the dedicated guides for tips on shooting for the best cutout.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-4-title">
+      <h2 id="section-4-title">Try It On Your Worst Photo</h2>
+      <p>The gallery only shows successes. The real test is your worst photo — the one with a busy background and a hairy edge. That's exactly the image to run through <a href="index.html">BgClear</a>, because it's free and nothing gets uploaded.</p>
+    </section>
+    <section class="content-section" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Are these images processed on my device?</summary>
+          <p>The examples shown here were processed with the same in-browser model used by the website. When you run your own photo, the processing happens locally in your browser.</p>
+        </details>
+        <details>
+          <summary>Do results on my photos match the gallery?</summary>
+          <p>Quality depends on the photo. Clean, well-lit subjects with plain backgrounds give the best results — the same caveat applies to every background remover.</p>
+        </details>
+        <details>
+          <summary>Can I submit my before/after to the gallery?</summary>
+          <p>Email us via the contact page. If we publish your example we'll ask for permission and keep it anonymous.</p>
+        </details>
+      </div>
+    </section>
+    <section class="content-section" aria-labelledby="related-title">
+      <h2 id="related-title">Related Guides &amp; Comparisons</h2>
+      <div class="guide-links"><a href="car-vehicle-photo-background.html">Car & Vehicle Photos</a><a href="food-photography-background.html">Food Photography</a>
+      </div>
+    </section>
+    <div class="cta-box">
+      <h3>Ready to remove a background for free?</h3>
+      <a class="btn" href="index.html">Open the Tool</a>
+    </div>
+    
+        <nav aria-label="More guides and languages" style="margin-top:24px;padding-top:20px;border-top:1px solid #e5e7eb;">
+      <div style="font-size:0.8rem;color:#6b7280;margin-bottom:10px;">More guides &amp; languages:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="car-vehicle-photo-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128663; Car &amp; Vehicle Photos</a>
+        <a href="food-photography-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127829; Food Photography</a>
+        <a href="real-estate-photo-editing.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127968; Real Estate Photos</a>
+        <a href="transparent-images-presentations.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128444; Transparent for Presentations</a>
+        <a href="tshirt-apparel-mockup-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128085; T-Shirt &amp; Apparel Mockups</a>
+        <a href="best-free-background-remover-2026.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127942; Best Free Remover 2026</a>
+        <a href="hindi.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127470;&#127475; &#2361;&#2367;&#2344;&#2381;&#2342;&#2368; &#2350;&#2375;&#2306; &#2311;&#2360;&#2381;&#2340;&#2375;&#2350;&#2366;&#2354; &#2325;&#2352;&#2375;&#2306;</a>
+        <a href="it.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127470;&#127481; Usa in Italiano</a>
+        <a href="fr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127467;&#127479; Utiliser en Fran&ccedil;ais</a>
+        <a href="de.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127465;&#127466; Auf Deutsch nutzen</a>
+        <a href="tr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127481;&#127479; T&uuml;rk&ccedil;e Kullan&imath;n</a>
+      </div>
+    </nav>
+
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      BgClear background remover. Free online image background removal.
+    </footer>
+  </main>
+</body>
+</html>

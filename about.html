@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About BgClear — The Free, Private Background Remover</title>
+  <meta name="description" content="About BgClear — a free, browser-based AI background remover with no signup, no watermark, and no uploads. How it works and who it's for.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bg-remover-free.netlify.app/about">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23667eea'/%3E%3Cstop%20offset='1'%20stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='url(%23g)'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial,sans-serif'%20font-size='26'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EBG%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="About Us | BgClear">
+  <meta property="og:description" content="About BgClear — a free, browser-based AI background remover with no signup, no watermark, and no uploads. Here's why it exists, how it works, and who it's for.">
+  <meta property="og:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://bg-remover-free.netlify.app/about">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BgClear">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us | BgClear">
+  <meta name="twitter:description" content="Learn about BgClear, a free AI background remover built for everyone. Remove image backgrounds online with a simple browser-based tool.">
+  <meta name="twitter:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --purple: #667eea;
+      --blue: #764ba2;
+      --shadow: 0 18px 45px rgba(31, 41, 55, 0.1);
+      --radius: 18px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    a {
+      color: var(--purple);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .page {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 10px 24px rgba(102, 126, 234, 0.3);
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-weight: 700;
+    }
+    .nav a {
+      color: #475569;
+    }
+    .hero {
+      padding: 42px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #475569;
+      background: #f8fafc;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+    .lead {
+      margin: 0;
+      max-width: 740px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .card {
+      padding: 26px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 10px 28px rgba(31, 41, 55, 0.06);
+    }
+    .card.wide {
+      grid-column: 1 / -1;
+    }
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 10px 22px rgba(102, 126, 234, 0.22);
+      font-weight: 900;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 14px 28px rgba(102, 126, 234, 0.26);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .site-footer {
+      margin-top: 28px;
+      color: #64748b;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+    .cmp-table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 0.95rem; }
+    .cmp-table th, .cmp-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; color: var(--muted); }
+    .cmp-table th { background: #f8fafc; color: var(--text); font-weight: 800; }
+    .cmp-table tr:nth-child(even) td { background: #fbfcff; }
+    .faq-list details { border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 10px; padding: 0 16px; }
+    .faq-list summary { padding: 14px 0; font-weight: 800; cursor: pointer; color: var(--text); }
+    .faq-list details p { padding: 0 0 14px; margin: 0; color: var(--muted); }
+    .prose ul { margin: 0 0 14px; padding-left: 22px; }
+    .prose li { margin-bottom: 8px; color: var(--muted); }
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 22px, 960px);
+        padding-top: 18px;
+      }
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .hero,
+      .card {
+        padding: 22px;
+        border-radius: 15px;
+      }
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .button-row .btn {
+        width: 100%;
+      }
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1294547754833643"
+     crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About BgClear",
+  "description": "About BgClear — a free, browser-based AI background remover with no signup, no watermark, and no uploads. How it works and who it's for.",
+  "url": "https://bg-remover-free.netlify.app/about",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "BgClear",
+    "url": "https://bg-remover-free.netlify.app/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is BgClear really free, or is there a catch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Really free. No trial, no credit system, no weekly cap on images. The site is ad-supported, which is how it pays for itself without charging users. That's the whole business model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do my photos get stored anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The AI model runs in your browser and your images are processed on your own device. Nothing is uploaded, so there is nothing to store — and nothing to leak."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is there no signup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because there's nothing to save on our end. No accounts means no passwords to manage, no emails to hand over, and no reason to lock features behind registration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the AI gets the cutout wrong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Try the photo once more with better light or a plainer background — input quality is the biggest factor. Some tricky cases (fine hair, see-through objects, low-res files) are genuinely hard for every tool, including paid ones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the downloaded images commercially?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Images you process with BgClear are yours to use for work, listings, or anything else. We add no license strings and claim no rights to your files."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://bg-remover-free.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About BgClear",
+      "item": "https://bg-remover-free.netlify.app/about"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="BgClear home">
+        <span class="brand-mark" aria-hidden="true">BG</span>
+        <span>BgClear</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <span class="eyebrow">Free AI Background Remover for Everyone</span>
+      <h1>About BgClear</h1>
+      <p class="lead">BgClear is a free, browser-based background remover I built because I got tired of the same old cycle: tools that make you create an account, tools that watermark your work until you pay, and tools that send your photos to a server somewhere before returning a "premium" result. This one does none of those things.</p>
+    </section>
+    <section class="content-grid">
+      <article class="card wide">
+        <div class="icon" aria-hidden="true">1</div>
+        <h2>Our Purpose</h2>
+        <p>Most people don't need a $20-a-month subscription to remove a background. They need to clean up a product photo for a marketplace listing, fix a profile picture before a job interview, or strip the background off a scanned document before submitting homework. Those are small, everyday jobs, and they shouldn't require learning Photoshop or paying for software you'll use twice.</p>
+        <p>So the purpose here is deliberately narrow: one task, done well, with nothing in the way. No layers, no brushes, no ten-minute tutorial before your first upload. You open the page, drop in a photo, and the background is gone.</p>
+      </article>
+      <article class="card wide">
+        <div class="icon" aria-hidden="true">AI</div>
+        <h2>How the Tool Works</h2>
+        <p>Under the hood, BgClear runs an AI model that identifies the main subject of an image — the person, product, animal, or object — and separates it from everything around it. The part people usually find surprising is where that happens: right in your browser.</p>
+        <p>Your photo is processed locally, on your own device. It is never uploaded to a server, never stored, never looked at by anyone on our side. That's what makes the tool both fast and private. It's also why there's no account system — there's nothing to save, so there's nothing to log in for.</p>
+      </article>
+      <article class="card wide">
+        <div class="icon" aria-hidden="true">?</div>
+        <h2>Why We Made This Tool</h2>
+        <p>The honest answer: the free options that existed when we started were not really free. Some capped you at a handful of images per week. Some plastered a watermark on every download and then upsold you on removing it. Others wanted an account, an email address, and a credit card just to test a feature that takes five seconds to run.</p>
+        <p>That friction punishes exactly the people who need the tool most — students, small sellers, freelancers, and anyone doing a one-off job. We made BgClear to remove those barriers: no signup, no watermark, no image limits on the free tier, and no requirement to hand over a photo you'd rather keep to yourself.</p>
+      </article>
+      <article class="card wide">
+        <div class="icon" aria-hidden="true">★</div>
+        <h2>Our Mission</h2>
+        <p>The mission is unglamorous, and I think that's the point: make one useful thing, make it free, and make it genuinely good rather than "free with catches." We'd rather do one task properly than stuff the page with forty half-baked features nobody asked for.</p>
+        <p>Practically, that means the tool stays fast, the privacy stays real, and the free tier stays actually free. If BgClear saves you ten minutes on a Tuesday afternoon — whether you're prepping a listing, fixing a selfie, or finishing an assignment — it's done its job. That's the whole measurement of success around here.</p>
+      </article>
+      <article class="card wide">
+        <h2>Built for Real Everyday Use</h2>
+        <p>BgClear is used for product photos, portraits, thumbnails, ID pictures, presentation graphics, and a hundred other things we never predicted. The common thread is that they're all real jobs with real deadlines, not hobby projects. That's why the design favors speed and simplicity over feature count — the people using this tool don't have time to wander through menus.</p>
+        <p>Here's the fine print, because you deserve it:</p>
+        <ul class="prose">
+          <li><strong>Formats:</strong> JPG, PNG, and WebP up to 10MB per image.</li>
+          <li><strong>Bulk:</strong> up to 20 images at once, all processed locally.</li>
+          <li><strong>Cost:</strong> free. The site is supported by ads so it can stay that way.</li>
+          <li><strong>Privacy:</strong> images never leave your device.</li>
+          <li><strong>Output:</strong> clean transparent PNGs, no watermark, no credit system.</li>
+        </ul>
+        <div class="button-row">
+          <a class="btn" href="index.html">Try BgClear</a>
+        </div>
+      </article>
+      <article class="card wide">
+        <div class="icon" aria-hidden="true">?</div>
+        <h2>Questions People Actually Ask Us</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Is BgClear really free, or is there a catch?</summary>
+            <p>Really free. No trial, no credit system, no weekly cap on images. The site is ad-supported, which is how it pays for itself without charging users. That's the whole business model.</p>
+          </details>
+          <details>
+            <summary>Do my photos get stored anywhere?</summary>
+            <p>No. The AI model runs in your browser and your images are processed on your own device. Nothing is uploaded, so there is nothing to store — and nothing to leak.</p>
+          </details>
+          <details>
+            <summary>Why is there no signup?</summary>
+            <p>Because there's nothing to save on our end. No accounts means no passwords to manage, no emails to hand over, and no reason to lock features behind registration.</p>
+          </details>
+          <details>
+            <summary>What if the AI gets the cutout wrong?</summary>
+            <p>Try the photo once more with better light or a plainer background — input quality is the biggest factor. Some tricky cases (fine hair, see-through objects, low-res files) are genuinely hard for every tool, including paid ones.</p>
+          </details>
+          <details>
+            <summary>Can I use the downloaded images commercially?</summary>
+            <p>Yes. Images you process with BgClear are yours to use for work, listings, or anything else. We add no license strings and claim no rights to your files.</p>
+          </details>
+        </div>
+      </article>
+    </section>
+        <nav aria-label="More guides and languages" style="margin-top:24px;padding-top:20px;border-top:1px solid #e5e7eb;">
+      <div style="font-size:0.8rem;color:#6b7280;margin-bottom:10px;">More guides &amp; languages:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="car-vehicle-photo-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🚗 Car & Vehicle Photos</a>
+        <a href="food-photography-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🍔 Food Photography</a>
+        <a href="real-estate-photo-editing.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🏠 Real Estate Photos</a>
+        <a href="transparent-images-presentations.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🖼️ Transparent for Presentations</a>
+        <a href="tshirt-apparel-mockup-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">👕 T-Shirt & Apparel Mockups</a>
+        <a href="hindi.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇮🇳 हिंदी में इस्तेमाल करें</a>
+        <a href="it.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇮🇹 Usa in Italiano</a>
+        <a href="fr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇫🇷 Utiliser en Français</a>
+        <a href="de.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇩🇪 Auf Deutsch nutzen</a>
+        <a href="tr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇹🇷 Türkçe Kullanın</a>
+      </div>
+    </nav>
+    <footer class="site-footer">BgClear background remover. Free online image background removal.</footer>
+  </main>
+</body>
+</html>

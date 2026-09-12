@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Guide to Background Removal — BgClear</title>
+  <meta name="description" content="Everything you need for clean background removal — techniques, mistakes, tools, and workflows. Written from real-world experience.">
+  <meta name="keywords" content="background removal guide, remove background, AI background remover, transparent background, image editing guide">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bg-remover-free.netlify.app/guide">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23667eea'/%3E%3Cstop%20offset='1'%20stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='url(%23g)'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial,sans-serif'%20font-size='26'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EBG%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Complete Guide to Background Removal — BgClear">
+  <meta property="og:description" content="Learn everything about background removal — techniques, best practices, tools, and real-world use cases in this complete free step-by-step guide.">
+  <meta property="og:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://bg-remover-free.netlify.app/guide">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="BgClear">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Complete Guide to Background Removal — BgClear">
+  <meta name="twitter:description" content="Learn everything about background removal — techniques, best practices, tools, and real-world use cases in this complete free step-by-step guide.">
+  <meta name="twitter:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --purple: #667eea;
+      --blue: #764ba2;
+      --shadow: 0 18px 45px rgba(31, 41, 55, 0.1);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 10px 24px rgba(102, 126, 234, 0.3);
+    }
+    .header-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+    .hero {
+      padding: 34px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.15;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .content-section {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .content-section h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+    .content-section p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    .cta-box {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--blue);
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+    .site-footer {
+      margin-top: 28px;
+      color: #64748b;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: var(--purple);
+      font-weight: 700;
+    }
+    .cmp-table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 0.95rem; }
+    .cmp-table th, .cmp-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; color: var(--muted); }
+    .cmp-table th { background: #f8fafc; color: var(--text); font-weight: 800; }
+    .cmp-table tr:nth-child(even) td { background: #fbfcff; }
+    .faq-list details { border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 10px; padding: 0 16px; }
+    .faq-list summary { padding: 14px 0; font-weight: 800; cursor: pointer; color: var(--text); }
+    .faq-list details p { padding: 0 0 14px; margin: 0; color: var(--muted); }
+    .prose ul { margin: 0 0 14px; padding-left: 22px; }
+    .prose li { margin-bottom: 8px; color: var(--muted); }
+    .tip-box { padding: 14px 16px; margin: 12px 0 16px; border-left: 4px solid var(--purple); border-radius: 0 12px 12px 0; background: #f6f7ff; }
+    .tip-box p { margin: 0; color: var(--text); }
+    .pros, .cons { list-style: none; padding-left: 0; margin: 10px 0 16px; }
+    .pros li, .cons li { padding-left: 24px; margin-bottom: 8px; color: var(--muted); position: relative; }
+    .pros li::before { content: "+"; position: absolute; left: 0; font-weight: 800; color: #16a34a; }
+    .cons li::before { content: "\2212"; position: absolute; left: 0; font-weight: 800; color: #dc2626; }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 22px, 1120px); padding-top: 18px; }
+      .site-header { align-items: flex-start; flex-direction: column; }
+      .header-note { text-align: left; }
+      .hero, .content-section, .cta-box { padding: 18px; border-radius: 15px; }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Complete Guide to Background Removal — BgClear",
+  "description": "Everything you need for clean background removal — techniques, mistakes, tools, and workflows. Written from real-world experience.",
+  "image": "https://bg-remover-free.netlify.app/og-image.png",
+  "datePublished": "2026-08-01T00:00:00+05:30",
+  "dateModified": "2026-08-29T00:00:00+05:30",
+  "inLanguage": "en",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bg-remover-free.netlify.app/guide"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "BgClear",
+    "url": "https://bg-remover-free.netlify.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BgClear",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bg-remover-free.netlify.app/og-image.png"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does a background remover work on any image?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most photos, yes — people, pets, products, vehicles, and logos all cut out well when the source is clear. The hard cases are consistent across every tool: fine hair and fur, see-through materials, and subjects that blend into their background."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my cutout have a white or colored halo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's a rim of background color bleeding into the edge, common when the background is bright or close in color to the subject. It's more visible on dark or colored backgrounds. A source photo with strong contrast between subject and backdrop minimizes it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I export as PNG or JPG after removing the background?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PNG if you want to keep the transparency and move the subject around later. JPG only after you've placed the subject onto a fixed background, because JPG can't store transparency at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to upload personal photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With BgClear it's about as safe as it gets — the image never leaves your browser. With server-based tools, read their privacy policy and consider whether you're comfortable sending the file anywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What resolution should my source photo be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As high as you have. Low-res images produce soft edges no matter how good the AI is, because the detail simply isn't in the file. For print, aim for at least 2000px on the long side; for web, 1000px is usually plenty."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://bg-remover-free.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Complete Guide to Background Removal — BgClear",
+      "item": "https://bg-remover-free.netlify.app/guide"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="index.html" aria-label="BgClear home">
+        <span class="brand-mark" aria-hidden="true">BG</span>
+        <span>BgClear</span>
+      </a>
+      <div class="header-note">Free AI background remover. No signup. No watermark.</div>
+    </header>
+    <section class="hero" aria-labelledby="guide-title">
+      <h1 id="guide-title">Complete Guide to Background Removal — BgClear</h1>
+      <p style="display:inline-block;padding:6px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;font-size:0.82rem;font-weight:700;color:#475569;margin-bottom:16px;">🔒 Your photo never leaves your device</p>
+      <p style="font-size:0.8rem;color:#64748b;margin:0 0 14px;">Last updated: September 10, 2026</p>
+      <p>I've spent years processing images for online listings, client projects, and my own side hustles, and I can tell you the single biggest lesson background removal taught me: the tool matters far less than the photo you feed it. Give a mediocre tool a great photo and you'll get a good cutout. Give a great tool a bad photo and you'll be staring at jagged edges wondering what went wrong. This guide covers the whole picture — why it works, how to get it right, and where people trip up.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-1-title">
+      <h2 id="section-1-title">1. What is Background Removal and Why It Matters</h2>
+      <p>Background removal is exactly what it sounds like: isolating the main subject of a photo and stripping away everything behind it, so the subject can stand on its own. The output is usually a transparent PNG, which you can then drop onto a white background, a colored background, a photo, or a printed piece — depending on what the job needs.</p>
+      <p>Why does anyone bother? Because the background is almost never what you're selling. On a marketplace listing, the product is the star and a cluttered kitchen counter is a distraction. On a profile picture, your face is the star and a busy street is noise. On a presentation slide, the diagram is the star and a stock-photo backdrop just makes it harder to read. Removing the background focuses attention where it belongs, and it makes your images reusable across contexts — one cutout, a hundred placements.</p>
+      <p>It also used to be a genuinely tedious skill. Before AI, you'd trace outlines by hand with the pen tool, zoom in at 300%, and spend twenty minutes on a single image. That's why background removal had a reputation as "designer work." Modern tools collapsed that entire process into a few seconds, which is great — but it also means people skip the thinking part and just hit the button. The rest of this guide is about the thinking part.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-2-title">
+      <h2 id="section-2-title">2. Best Practices for Perfect Results</h2>
+      <p>If you only remember one thing from this guide, make it this: the AI can only separate the subject from the background if it can tell the two apart. So give it a fighting chance. Shoot with even lighting, avoid strong shadows, and keep a clear edge between the subject and whatever is behind it. A portrait taken against a plain wall cuts out cleaner than the same portrait against a wall of books, and it has nothing to do with the tool's skill.</p>
+      <p>For products, photograph the item against a contrasting backdrop — a light product on a darker mat, a dark product on a light one. This is not a photography aesthetic choice; it's edge detection. The model reads the boundary where colors change, and the bigger the color jump, the more confident the cut. Hair, fur, and anything semi-transparent deserve extra care: brighter, sharper source photos always win.</p>
+      <p>After processing, zoom in on the edges before you download. Check for a faint halo (a thin colored rim left around the subject), stray background flecks in gaps, and whether fine details like hair strands survived. A quick check beats redoing the whole job later. Then decide on your output: transparent for flexibility, white for marketplaces, and a colored background when the design calls for it. Removal is only half the task — the other half is placing the subject somewhere intentional.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-3-title">
+      <h2 id="section-3-title">3. Common Use Cases: E-commerce, ID Photos, Social Media</h2>
+      <p>E-commerce is the biggest consumer of background removal, and for good reason. Platforms like Amazon, Flipkart, and Meesho effectively require clean, consistent product shots, and a white or transparent background is the industry standard. The payoff is practical: a uniform catalog looks trustworthy, customers can see the product without visual noise, and the same cutout can be reused across your store, your ads, and your social posts. When you sell forty SKUs, being able to batch-clean images matters.</p>
+      <p>ID photos are the opposite case in one important way — here you're not removing a distracting background, you're standardizing one. Passport, visa, and office badge photos need a plain light background, a centered face, and neutral expression. Remove whatever is behind the person and replace it with plain white, and the photo suddenly looks like it came from an official photo booth instead of a living room. It's one of those small fixes that makes documents get approved faster.</p>
+      <p>Social media is the third big bucket. Profile pictures, story backgrounds, product teasers, thumbnails — the platforms compress everything into tiny frames, and clutter reads as noise at that size. A clean subject on a simple background survives the compression and looks deliberate. Creators who batch-prepare their profile assets once a month tend to look far more polished than the ones who screenshot and upload, and it costs them about five minutes.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-4-title">
+      <h2 id="section-4-title">4. How AI Background Removal Works</h2>
+      <p>Strip away the marketing and the technology comes down to one idea: the model looks at every pixel and asks, "does this belong to the subject or the background?" It does this by recognizing patterns — edges, colors, textures, shapes — that it learned from millions of labeled photos during training. Show it a person against a wall and it draws a boundary around the person, not because it understands "person" the way you do, but because it has seen enough examples to predict where the boundary almost certainly is.</p>
+      <p>The same training is what makes the model fail in predictable ways. Put a transparent glass bottle on a cluttered shelf and the boundary becomes genuinely ambiguous — the model has to guess, because even a human would hesitate. Put a white dog on a white rug and the edge barely exists in the data. Knowing this saves you a lot of frustration: most "bad" results are not the tool's fault, they're cases where the boundary wasn't there to find.</p>
+      <p>Two more things worth understanding. First, models are improving fast — the gap between "good" and "great" tools shrinks every year, and the best place to keep up is usually your own testing. Second, processing can happen in two places: on a server (fast, but your image leaves your device) or in your browser (private, and that's how BgClear works). For sensitive images — documents, family photos, client work — the browser option removes a whole category of worry.</p>
+    </section>
+    <section class="content-section" aria-labelledby="section-5-title">
+      <h2 id="section-5-title">5. Manual vs AI: The Three Ways to Cut Out a Subject</h2>
+      <p>It helps to know where AI fits compared to the alternatives, because the right choice depends on the job. Here's how the three common approaches stack up in practice.</p>
+      <table class="cmp-table">
+        <thead>
+          <tr><th>Method</th><th>Time per image</th><th>Edge quality</th><th>Best for</th><th>Skill needed</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>AI background remover (e.g. BgClear)</td><td>Seconds</td><td>Very good on clean photos</td><td>Bulk work, everyday jobs</td><td>None</td></tr>
+          <tr><td>Magic wand / lasso in an editor</td><td>Minutes</td><td>Good, but manual clean-up needed</td><td>Quick fixes, simple shapes</td><td>Basic</td></tr>
+          <tr><td>Pen tool / manual masking</td><td>20–40 min</td><td>Best, fully controlled</td><td>Hero images, tricky edges</td><td>Real practice</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box">
+        <p>The pragmatic workflow most pros use: run the AI first, then <a href="background-remover-without-ai.html">fix only the problem areas by hand</a>. You get 90% of the result in 5% of the time, and you only spend effort where it actually shows.</p>
+      </div>
+    </section>
+    <section class="content-section" aria-labelledby="section-6-title">
+      <h2 id="section-6-title">6. A Workflow That Actually Works</h2>
+      <div class="prose">
+        <ul>
+          <li><strong>Pick the photo first.</strong> Sharp, evenly lit, subject clearly separated from the background. Ten seconds of selection saves ten minutes of cleanup.</li>
+          <li><strong>Process.</strong> Upload to BgClear, check the preview at 100% zoom on the edges.</li>
+          <li><strong>Fix only what's broken.</strong> If there's a halo or a fleck, address it — most files are fine as-is.</li>
+          <li><strong>Export for the destination.</strong> Transparent PNG for flexibility, JPG after placing on white for marketplaces, WebP for the web.</li>
+          <li><strong>Keep the cutout.</strong> You will reuse it. Store it once, name it clearly.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="content-section" aria-labelledby="section-7-title">
+      <h2 id="section-7-title">7. Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Does a background remover work on any image?</summary>
+          <p>Most photos, yes — people, pets, products, vehicles, and logos all cut out well when the source is clear. The hard cases are consistent across every tool: fine hair and fur, see-through materials, and subjects that blend into their background.</p>
+        </details>
+        <details>
+          <summary>Why does my cutout have a white or colored halo?</summary>
+          <p>That's a rim of background color bleeding into the edge, common when the background is bright or close in color to the subject. It's more visible on dark or colored backgrounds. A source photo with strong contrast between subject and backdrop minimizes it.</p>
+        </details>
+        <details>
+          <summary>Should I export as PNG or JPG after removing the background?</summary>
+          <p>PNG if you want to keep the transparency and move the subject around later. JPG only after you've placed the subject onto a fixed background, because JPG can't store transparency at all.</p>
+        </details>
+        <details>
+          <summary>Is it safe to upload personal photos?</summary>
+          <p>With BgClear it's about as safe as it gets — the image never leaves your browser. With server-based tools, read their privacy policy and consider whether you're comfortable sending the file anywhere.</p>
+        </details>
+        <details>
+          <summary>What resolution should my source photo be?</summary>
+          <p>As high as you have. Low-res images produce soft edges no matter how good the AI is, because the detail simply isn't in the file. For print, aim for at least 2000px on the long side; for web, 1000px is usually plenty.</p>
+        </details>
+      </div>
+      <p style="margin-top:14px;color:var(--muted)">Running into a specific problem — jagged edges, model not loading, or hair cutout issues? See our <a href="troubleshooting.html" style="color:var(--purple);font-weight:700;">background remover troubleshooting guide</a>.</p>
+    </section>
+    <div class="cta-box">
+      <h3>Ready to remove your image background instantly?</h3>
+      <a class="btn" href="index.html">Try Background Remover Now</a>
+    </div>
+        <nav aria-label="More guides and languages" style="margin-top:24px;padding-top:20px;border-top:1px solid #e5e7eb;">
+      <div style="font-size:0.8rem;color:#6b7280;margin-bottom:10px;">More guides &amp; languages:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="car-vehicle-photo-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🚗 Car & Vehicle Photos</a>
+        <a href="food-photography-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🍔 Food Photography</a>
+        <a href="real-estate-photo-editing.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🏠 Real Estate Photos</a>
+        <a href="transparent-images-presentations.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🖼️ Transparent for Presentations</a>
+        <a href="tshirt-apparel-mockup-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">👕 T-Shirt & Apparel Mockups</a>
+        <a href="hindi.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇮🇳 हिंदी में इस्तेमाल करें</a>
+        <a href="it.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇮🇹 Usa in Italiano</a>
+        <a href="fr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇫🇷 Utiliser en Français</a>
+        <a href="de.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇩🇪 Auf Deutsch nutzen</a>
+        <a href="tr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">🇹🇷 Türkçe Kullanın</a>
+      </div>
+    </nav>
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+      </div>
+      BgClear background remover. Free online image background removal.
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visa Photo Background Colour by Country — White, Blue, Red</title>
+  <meta name="description" content="Visa photo background colour requirements by country — US, UK, Schengen, Malaysia, Indonesia and more. Free tool to prepare compliant visa photos." />
+  <meta name="keywords" content="visa photo background colour, visa photo background color, visa photo requirements by country, US visa photo background, Malaysia visa photo blue background, Indonesia visa photo red background" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bg-remover-free.netlify.app/visa-photo-background-color" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23667eea'/%3E%3Cstop%20offset='1'%20stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='url(%23g)'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial,sans-serif'%20font-size='26'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EBG%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Visa Photo Background Colour by Country — White, Blue, Red">
+  <meta property="og:description" content="Visa photo background colour requirements by country — US, UK, Schengen, Malaysia, Indonesia and more. Free tool to prepare compliant visa photos.">
+  <meta property="og:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://bg-remover-free.netlify.app/visa-photo-background-color">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="BgClear">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Visa Photo Background Colour by Country — White, Blue, Red">
+  <meta name="twitter:description" content="Visa photo background colour requirements by country — US, UK, Schengen, Malaysia, Indonesia and more. Free tool to prepare compliant visa photos.">
+  <meta name="twitter:image" content="https://bg-remover-free.netlify.app/og-image.png">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --purple: #667eea;
+      --blue: #764ba2;
+      --shadow: 0 18px 45px rgba(31, 41, 55, 0.1);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 10px 24px rgba(102, 126, 234, 0.3);
+    }
+    .header-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+    .hero {
+      padding: 34px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.15;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .content-section {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid rgba(226, 232, 240, 0.86);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .content-section h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+    .content-section h3 { margin: 18px 0 8px; font-size: 1.1rem; }
+    .content-section p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    .cta-box {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--blue);
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+    .site-footer {
+      margin-top: 28px;
+      color: #64748b;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: var(--purple);
+      font-weight: 700;
+    }
+    .cmp-table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 0.95rem; }
+    .cmp-table th, .cmp-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; color: var(--muted); }
+    .cmp-table th { background: #f8fafc; color: var(--text); font-weight: 800; }
+    .cmp-table tr:nth-child(even) td { background: #fbfcff; }
+    .faq-list details { border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 10px; padding: 0 16px; }
+    .faq-list summary { padding: 14px 0; font-weight: 800; cursor: pointer; color: var(--text); }
+    .faq-list details p { padding: 0 0 14px; margin: 0; color: var(--muted); }
+    .prose ul { margin: 0 0 14px; padding-left: 22px; }
+    .prose li { margin-bottom: 8px; color: var(--muted); }
+    .guide-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+    .guide-links a { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.9rem; font-weight: 700; color: #1f2937; background: #f5f7fb; }
+    .guide-links a:hover { border-color: var(--purple); color: var(--purple); }
+    .source-note { font-size: 0.82rem; color: #94a3b8; }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 22px, 1120px); padding-top: 18px; }
+      .site-header { align-items: flex-start; flex-direction: column; }
+      .header-note { text-align: left; }
+      .hero, .content-section, .cta-box { padding: 18px; border-radius: 15px; }
+    }
+  </style>
+</head>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Visa Photo Background Colour by Country — White, Blue, Red",
+  "description": "Visa photo background colour requirements by country — US, UK, Schengen, Malaysia, Indonesia and more. Free tool to prepare compliant visa photos.",
+  "url": "https://bg-remover-free.netlify.app/visa-photo-background-color",
+  "image": "https://bg-remover-free.netlify.app/og-image.png",
+  "datePublished": "2026-09-10T00:00:00+05:30",
+  "dateModified": "2026-09-10T00:00:00+05:30",
+  "inLanguage": "en",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bg-remover-free.netlify.app/visa-photo-background-color"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "BgClear",
+    "url": "https://bg-remover-free.netlify.app"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BgClear",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bg-remover-free.netlify.app/og-image.png"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What background colour does the US visa require?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The United States requires a plain white background for visa and passport photos. The photo must be 2x2 inches (51x51mm), taken within the last 6 months, and you must not wear glasses. The background must be uniformly white with no shadows, patterns, or off-white tones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which countries require blue background for visa photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Malaysia is the most well-known country requiring a light blue background for visa photos (35x50mm). Some Central Asian countries and certain Indian document types also use blue backgrounds. Always verify with the specific embassy, as requirements can change without notice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use BgClear to change my visa photo background?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. BgClear removes your existing background in the browser, and then you can select white, blue, red, or any solid colour from the Background menu before downloading. The entire process happens locally — your photo never leaves your device, making it safe for sensitive identity documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size should my visa photo be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Visa photo sizes vary by country. The US requires 2x2 inches (51x51mm), the UK and most Schengen countries use 35x45mm, Indonesia uses 3x4cm, and Malaysia uses 35x50mm. Always check the specific requirements for your destination country before taking or printing the photo."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://bg-remover-free.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Visa Photo Background Colour by Country — White, Blue, Red",
+      "item": "https://bg-remover-free.netlify.app/visa-photo-background-color"
+    }
+  ]
+}
+</script>
+
+<body>
+  <main class="page">
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="index.html" aria-label="BgClear home">
+        <span class="brand-mark" aria-hidden="true">BG</span>
+        <span>BgClear</span>
+      </a>
+      <div class="header-note">Free AI background remover. No signup. No watermark.</div>
+    </header>
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">Visa Photo Background Colour by Country</h1>
+      <p style="display:inline-block;padding:6px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;font-size:0.82rem;font-weight:700;color:#475569;margin-bottom:16px;">&#128274; Your photo never leaves your device</p>
+      <p>Every country has its own visa photo rules, and the background colour is one of the most commonly rejected details. The United States demands pure white. Malaysia insists on light blue. Indonesia requires bright red. Submit a photo with the wrong background and your application gets delayed or returned — sometimes after weeks of waiting. This guide lists the exact background colour, dimensions, and key requirements for 14 major destinations so you can prepare a compliant photo before you apply. If your existing photo has the wrong background, BgClear can fix it in seconds without uploading anything to a server.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="section-1-title">
+      <h2 id="section-1-title">Why Background Colour Matters for Visa Applications</h2>
+      <p>Visa photo requirements are not arbitrary. Embassies and consulates worldwide use automated facial recognition software to verify applicants against their submitted photos. These systems depend on consistent, predictable image characteristics — and background colour is one of the most critical variables.</p>
+      <p>Different background colours serve different detection algorithms. White backgrounds create strong contrast against most skin tones, making it easier for software to isolate the face and map facial landmarks. Blue backgrounds, like those used by Malaysia, provide a mid-tone contrast that works well with certain camera and lighting setups. Red backgrounds, required by Indonesia, are less common globally but are specifically calibrated for Indonesian government systems.</p>
+      <p>When a photo has the wrong background colour, several things can go wrong. The automated system may fail to detect the face properly, triggering a manual review that adds days or weeks to processing. In some cases, the photo is simply rejected and you receive a notice to resubmit — which means another trip to a photo studio, another fee, and a potential delay to your travel plans.</p>
+      <p>Strict compliance with background colour requirements leads to faster processing, fewer rejections, and less stress during the visa application process. It is one of the easiest requirements to get right, especially if you have a tool that can swap backgrounds instantly.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="section-2-title">
+      <h2 id="section-2-title">Visa Photo Background Requirements by Country</h2>
+      <p>The table below covers background colour, photo dimensions, and key rules for 14 popular visa destinations. Requirements can change without notice — always confirm with the specific embassy or consulate before submitting your application.</p>
+      <div style="overflow-x:auto;">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Country/Region</th>
+            <th>Background Colour</th>
+            <th>Size</th>
+            <th>Other Requirements</th>
+            <th>Last Verified</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>United States</td>
+            <td>White</td>
+            <td>2x2 inches (51x51mm)</td>
+            <td>No glasses, taken within last 6 months</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>United Kingdom</td>
+            <td>White or light grey</td>
+            <td>35x45mm</td>
+            <td>Neutral expression, no headwear</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Schengen/EU</td>
+            <td>Light grey or white</td>
+            <td>35x45mm</td>
+            <td>No headwear, 70-80% face coverage</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Canada</td>
+            <td>White</td>
+            <td>35x45mm</td>
+            <td>Neutral expression, natural lighting</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Australia</td>
+            <td>White or light</td>
+            <td>35x45mm</td>
+            <td>Recent photo, clear and sharp</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Malaysia</td>
+            <td>Light blue</td>
+            <td>35x50mm</td>
+            <td>Specific blue shade required</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Indonesia</td>
+            <td>Red</td>
+            <td>3x4 cm</td>
+            <td>Bright red background</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>China</td>
+            <td>White</td>
+            <td>33x48mm</td>
+            <td>No smiling</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Japan</td>
+            <td>White</td>
+            <td>4x3 cm</td>
+            <td>Taken within last 6 months</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>South Korea</td>
+            <td>White</td>
+            <td>3.5x4.5 cm</td>
+            <td>E-7 visa: 3.5x4.5 cm</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>India (Visa)</td>
+            <td>White</td>
+            <td>2x2 inches</td>
+            <td>Similar to US specifications</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>UAE/Dubai</td>
+            <td>White</td>
+            <td>4.3x5.5cm</td>
+            <td>Passport size format</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Singapore</td>
+            <td>White</td>
+            <td>35x45mm</td>
+            <td>Recent photo</td>
+            <td>Sep 2026</td>
+          </tr>
+          <tr>
+            <td>Thailand</td>
+            <td>White</td>
+            <td>4x6 cm</td>
+            <td>Recent photo</td>
+            <td>Sep 2026</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="source-note">Details reflect each country's publicly stated visa photo requirements as of September 2026. Requirements change — always verify with the relevant embassy or consulate before your application.</p>
+      <p>The pattern is clear: most Western and Asian countries require white backgrounds, while Malaysia and Indonesia are the notable exceptions. If you are applying to multiple countries, keeping a white-background photo as your base and swapping colours as needed is the most practical approach.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="section-3-title">
+      <h2 id="section-3-title">How to Change Background Colour with BgClear</h2>
+      <p>You do not need Photoshop or a photo studio to fix your visa photo background. BgClear removes the background entirely in your browser, then lets you pick the exact colour your embassy requires. Here is how:</p>
+      <div class="prose">
+        <ul>
+          <li><strong>Step 1:</strong> Open <a href="index.html" style="color:var(--purple);font-weight:700;">BgClear</a> in any browser — no account or download required.</li>
+          <li><strong>Step 2:</strong> Drop your visa photo onto the upload area or click to select a file. The AI removes the background automatically in a few seconds.</li>
+          <li><strong>Step 3:</strong> Look for the Background menu that appears after processing. You will see options to set a solid colour behind your cutout.</li>
+          <li><strong>Step 4:</strong> Select the colour your destination country requires — white for the US, light blue for Malaysia, red for Indonesia, or any custom shade you need.</li>
+          <li><strong>Step 5:</strong> Preview the result to make sure the background is uniform and your face is clearly visible with proper contrast.</li>
+          <li><strong>Step 6:</strong> Download the finished photo. It is saved as a high-quality PNG ready for printing or uploading to your visa application portal.</li>
+        </ul>
+      </div>
+      <p>The entire process happens locally in your browser. No photo is uploaded to any server, which is especially important for identity documents like passport and visa photos that contain sensitive personal information. Your image stays on your machine from start to finish.</p>
+      <p>BgClear works on desktops, laptops, tablets, and phones. Whether you are at your desk or squeezing in a last-minute visa photo fix on your phone before an appointment, the tool adapts to your screen and delivers the same result.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="section-4-title">
+      <h2 id="section-4-title">Tips for Visa Photos</h2>
+      <p>Getting the background colour right is only part of the equation. Visa applications are rejected for many subtle reasons, and following these tips will help you avoid the most common pitfalls:</p>
+      <div class="prose">
+        <ul>
+          <li><strong>No glasses (US requirement):</strong> The United States specifically bans eyeglasses in visa and passport photos as of recent policy updates. Remove them entirely, including prescription glasses and reading glasses. Some other countries still allow them, but going without is safer across the board.</li>
+          <li><strong>Neutral expression:</strong> Most countries require a neutral facial expression — no smiling, no frowning, mouth closed. China is particularly strict about this. A relaxed, natural face with eyes open and looking straight at the camera is what embassies want.</li>
+          <li><strong>Proper lighting:</strong> Use even, diffused lighting with no harsh shadows on your face or the background. Natural daylight from a window works well. Avoid overhead fluorescent lighting that creates shadows under the eyes and chin. The background must be evenly lit with no gradients or hot spots.</li>
+          <li><strong>No digital editing of facial features:</strong> Do not retouch blemishes, smooth skin, alter eye colour, or change your appearance in any way. Embassies use software to detect digital manipulation, and altered photos are a common reason for rejection and can even lead to application flags.</li>
+          <li><strong>Proper head-to-frame ratio:</strong> Your face should typically occupy 70-80% of the photo height in most countries. The top of your head should be near the top of the frame, with a small margin above your hair. The Schengen area is particularly specific about this ratio.</li>
+          <li><strong>Recent photos:</strong> Most countries require photos taken within the last 6 months. Your appearance should current — if you have changed your hairstyle, grown a beard, or had any other notable change, take a new photo even if your old one is technically still within the window.</li>
+          <li><strong>Print quality:</strong> If you are printing your photo, use a high-resolution printer or a professional photo printing service. The photo should be sharp, in focus, and printed on photo-quality paper. Blurry or pixelated prints are rejected.</li>
+        </ul>
+      </div>
+      <p>When in doubt, check the official embassy or consulate website for your destination country. Requirements are published there and are the authoritative source. This guide is a convenient reference, but government websites are always the final word.</p>
+    </section>
+
+    <section class="content-section" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What background colour does the US visa require?</summary>
+          <p>The United States requires a plain white background for visa and passport photos. The photo must be 2x2 inches (51x51mm), taken within the last 6 months, and you must not wear glasses. The background must be uniformly white with no shadows, patterns, or off-white tones.</p>
+        </details>
+        <details>
+          <summary>Which countries require blue background for visa photos?</summary>
+          <p>Malaysia is the most well-known country requiring a light blue background for visa photos (35x50mm). Some Central Asian countries and certain Indian document types also use blue backgrounds. Always verify with the specific embassy, as requirements can change without notice.</p>
+        </details>
+        <details>
+          <summary>Can I use BgClear to change my visa photo background?</summary>
+          <p>Yes. BgClear removes your existing background in the browser, and then you can select white, blue, red, or any solid colour from the Background menu before downloading. The entire process happens locally — your photo never leaves your device, making it safe for sensitive identity documents.</p>
+        </details>
+        <details>
+          <summary>What size should my visa photo be?</summary>
+          <p>Visa photo sizes vary by country. The US requires 2x2 inches (51x51mm), the UK and most Schengen countries use 35x45mm, Indonesia uses 3x4cm, and Malaysia uses 35x50mm. Always check the specific requirements for your destination country before taking or printing the photo.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="cta-box">
+      <h3>Fix your visa photo background in seconds</h3>
+      <p style="color:rgba(255,255,255,0.88);margin:0;">Remove the background and replace it with the exact colour your embassy requires — white, blue, red, or anything else.</p>
+      <a class="btn" href="index.html">Open BgClear — Free</a>
+    </div>
+
+    <section class="content-section" aria-labelledby="related-title">
+      <h2 id="related-title">Related Guides</h2>
+      <div class="guide-links">
+        <a href="passport-photo.html">&#128196; Passport Photo Background</a>
+        <a href="pan-aadhaar-photo-guide.html">&#127470;&#127475; PAN &amp; Aadhaar Card Background</a>
+        <a href="exam-photo-background.html">&#128218; Exam Photo Background</a>
+      </div>
+    </section>
+
+    <nav aria-label="More guides and languages" style="margin-top:24px;padding-top:20px;border-top:1px solid #e5e7eb;">
+      <div style="font-size:0.8rem;color:#6b7280;margin-bottom:10px;">More guides &amp; languages:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <a href="car-vehicle-photo-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128663; Car &amp; Vehicle Photos</a>
+        <a href="food-photography-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127829; Food Photography</a>
+        <a href="real-estate-photo-editing.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127968; Real Estate Photos</a>
+        <a href="transparent-images-presentations.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128444; Transparent for Presentations</a>
+        <a href="tshirt-apparel-mockup-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128085; T-Shirt &amp; Apparel Mockups</a>
+        <a href="best-free-background-remover-2026.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127942; Best Free Remover 2026</a>
+        <a href="hindi.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127470;&#127475; &#2361;&#2367;&#2344;&#2381;&#2342;&#2368; &#2350;&#2375;&#2306; &#2311;&#2360;&#2381;&#2340;&#2375;&#2350;&#2366;&#2354; &#2325;&#2352;&#2375;&#2306;</a>
+        <a href="it.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127470;&#127481; Usa in Italiano</a>
+        <a href="fr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127467;&#127479; Utiliser en Fran&ccedil;ais</a>
+        <a href="de.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127465;&#127466; Auf Deutsch nutzen</a>
+        <a href="tr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127481;&#127479; T&uuml;rk&ccedil;e Kullan&imath;n</a>
+      </div>
+    </nav>
+
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      BgClear background remover. Free online image background removal.
+    </footer>
+  </main>
+</body>
+</html>

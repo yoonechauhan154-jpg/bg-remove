@@ -1,0 +1,30 @@
+# Bundled tools / virtual environments (contains AWS CLI + package docs that trigger secret-scanning false positives)
+.tools/
+venv/
+.venv/
+env/
+Env/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
