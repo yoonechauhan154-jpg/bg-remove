@@ -201,8 +201,22 @@ LANG_NAV = """
 """
 
 
+def _canonical_url(file):
+    path = str(file).strip().strip("/")
+    if any(char in path for char in ("?", "#", "\\", ":")):
+        raise ValueError("Expected a repository page path, not a URL or query")
+    if any(part in (".", "..") for part in path.split("/")):
+        raise ValueError("Page paths must not contain dot segments")
+    path = re.sub(r"\.html$", "", path)
+    if path in ("", "index"):
+        return f"{SITE}/"
+    if path == "vs-canva":
+        path = "bgclear-vs-canva"
+    return f"{SITE}/{path}"
+
+
 def _schema(meta, h1, faq):
-    canon = f"{SITE}/{meta['file']}"
+    canon = _canonical_url(meta["file"])
     blocks = [
         {
             "@context": "https://schema.org",

@@ -31,7 +31,6 @@
   <link rel="alternate" hreflang="de" href="https://bg-remover-free.netlify.app/de">
   <link rel="alternate" hreflang="tr" href="https://bg-remover-free.netlify.app/tr">
   <link rel="alternate" hreflang="x-default" href="https://bg-remover-free.netlify.app/">
-  <link rel="alternate" hreflang="x-default" href="https://bg-remover-free.netlify.app/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -479,7 +478,7 @@
         <p>Importez votre photo JPG, PNG ou WebP et BgClear supprime l'arrière-plan directement dans votre navigateur grâce à l'IA, prête à télécharger en PNG transparent. Après traitement, placez le découpage sur un fond blanc ou de n'importe quelle couleur et téléchargez-le en PNG, JPG ou WebP.</p>
         <div class="trust-row" aria-label="Highlights">
           <span class="pill">100% Gratuit</span>
-          <span class="pill">Aucune clé API</span>
+          <span class="pill">Sans inscription</span>
           <span class="pill">PNG Transparent</span>
         </div>
       </div>
@@ -570,6 +569,20 @@
           <p>Comparez avant/après, puis téléchargez votre PNG transparent.</p>
         </article>
       </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="white-background-removal-title">
+      <h2 id="white-background-removal-title">Comment supprimer le fond blanc d'une photo ?</h2>
+      <ol>
+        <li>Choisissez une photo JPG, PNG ou WebP dont le sujet se distingue bien du fond blanc.</li>
+        <li>Attendez la suppression de l'arrière-plan, puis vérifiez les contours dans l'aperçu.</li>
+        <li>Dans le menu <strong>Fond</strong>, sélectionnez <strong>Transparent</strong>.</li>
+        <li>Choisissez <strong>PNG</strong> dans le menu <strong>Format</strong>, puis téléchargez le résultat.</li>
+      </ol>
+      <p>Le format JPG ne conserve pas la transparence. Certains logiciels affichent un PNG transparent sur du blanc : placez le résultat sur un fond coloré pour le vérifier.</p>
+      <p>BgClear essaie d'isoler le sujet ; il ne supprime pas simplement tous les pixels blancs. Un sujet blanc sur fond blanc, un logo ou du texte peut être mal détouré. Vérifiez les détails et n'utilisez pas un résultat qui efface une partie importante du sujet.</p>
+      <p>Pour ajouter un fond blanc plutôt que le supprimer, choisissez <strong>Blanc</strong> dans le menu Fond après le traitement.</p>
+      <p><a href="#uploadArea">Choisir une photo pour commencer</a></p>
     </section>
 
     <section class="content-section" aria-labelledby="why-title">
@@ -689,6 +702,15 @@
     }
 
 
+    function fileExtensionFor(blob, requestedFormat) {
+      const extensions = {
+        "image/png": "png",
+        "image/jpeg": "jpg",
+        "image/webp": "webp"
+      };
+      return extensions[blob.type] || requestedFormat;
+    }
+
     function compositeBlob(blob, bg, format) {
       if (!bg && format === "png") return Promise.resolve(blob);
       return new Promise((resolve) => {
@@ -699,19 +721,18 @@
           canvas.width = img.naturalWidth;
           canvas.height = img.naturalHeight;
           const ctx = canvas.getContext("2d");
-          if (bg) {
-            ctx.fillStyle = bg;
+          const fill = bg || (format === "jpg" ? "#ffffff" : "");
+          if (fill) {
+            ctx.fillStyle = fill;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
           }
           ctx.drawImage(img, 0, 0);
-          URL.revokeObjectURL(url);
-          if (format === "jpg") {
-            canvas.toBlob(resolve, "image/jpeg", 0.92);
-          } else if (format === "webp") {
-            canvas.toBlob(resolve, "image/webp", 0.92);
-          } else {
-            canvas.toBlob(resolve, "image/png");
-          }
+          const mimeType = format === "jpg" ? "image/jpeg"
+            : format === "webp" ? "image/webp" : "image/png";
+          canvas.toBlob((output) => {
+            URL.revokeObjectURL(url);
+            resolve(output || blob);
+          }, mimeType, 0.92);
         };
         img.onerror = () => { URL.revokeObjectURL(url); resolve(blob); };
         img.src = url;
@@ -727,7 +748,7 @@
       resultUrl = newUrl;
       afterImage.src = newUrl;
       downloadButton.href = newUrl;
-      const ext = exportOptions.format === "jpg" ? "jpg" : exportOptions.format;
+      const ext = fileExtensionFor(outBlob, exportOptions.format);
       downloadButton.download = `bgclear-background-removed.${ext}`;
     }
 
@@ -775,7 +796,7 @@
         resultUrl = URL.createObjectURL(outBlob);
         afterImage.src = resultUrl;
         downloadButton.href = resultUrl;
-        downloadButton.download = `bgclear-background-removed.${exportOptions.format === "jpg" ? "jpg" : exportOptions.format}`;
+        downloadButton.download = `bgclear-background-removed.${fileExtensionFor(outBlob, exportOptions.format)}`;
         setMode("result");
       } catch (error) {
         console.error(error);

@@ -1,453 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Background Removal API — No Credit Card, Instant Setup | BgClear</title>
-  <meta name="description" content="Free background removal API: no credit card, instant API key for testing. Self-hosted alternative to Remove.bg &amp; Clipdrop with privacy-first design, transparent pricing, and unlimited volume." />
-  <meta name="keywords" content="background removal api, remove.bg api alternative, remove background api, image background removal endpoint, privacy first background api" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://bg-remover-free.netlify.app/background-remover-api" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23667eea'/%3E%3Cstop%20offset='1'%20stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='url(%23g)'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial,sans-serif'%20font-size='26'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EBG%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Background Removal APIs vs Browser Processing | BgClear</title>
+  <meta name="description" content="Need a background removal API? Compare hosted, self-hosted and browser workflows. BgClear is a free browser tool, not a hosted API or server package.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bg-remover-free.netlify.app/background-remover-api">
+  <link rel="stylesheet" href="/article.css">
+  <link rel="icon" href="/apple-touch-icon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Background Removal API — Privacy-First, Unlimited Volume">
-  <meta property="og:description" content="Process images on your own infrastructure. No uploads, no per-image fees. Join the waitlist.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="BgClear">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Background Removal APIs vs Browser Processing | BgClear">
+  <meta property="og:description" content="Choose between a hosted API, self-hosted software and local browser processing. BgClear currently offers the browser workflow only.">
+  <meta property="og:url" content="https://bg-remover-free.netlify.app/background-remover-api">
   <meta property="og:image" content="https://bg-remover-free.netlify.app/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://bg-remover-free.netlify.app/background-remover-api">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="BgClear">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Background Removal API — Privacy-First, Unlimited Volume">
-  <meta name="twitter:description" content="Process images on your own infrastructure. No uploads, no per-image fees. Join the waitlist.">
+  <meta name="twitter:title" content="Background Removal APIs vs Browser Processing | BgClear">
+  <meta name="twitter:description" content="BgClear is a browser tool, not an API. Understand the integration and hosting differences before choosing a background removal workflow.">
   <meta name="twitter:image" content="https://bg-remover-free.netlify.app/og-image.png">
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --purple: #667eea;
-      --blue: #764ba2;
-      --shadow: 0 18px 45px rgba(31, 41, 55, 0.1);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.75;
-    }
-    a { color: inherit; text-decoration: none; }
-    .page {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 48px;
-    }
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 22px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: 0;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      color: #fff;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--purple), var(--blue));
-      box-shadow: 0 10px 24px rgba(102, 126, 234, 0.3);
-    }
-    .header-note {
-      color: var(--muted);
-      font-size: 0.95rem;
-      text-align: right;
-    }
-    .hero {
-      padding: 34px;
-      border: 1px solid rgba(226, 232, 240, 0.86);
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
-      box-shadow: var(--shadow);
-      margin-top: 20px;
-    }
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 3.2vw, 3rem);
-      line-height: 1.15;
-    }
-    .hero p {
-      margin: 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .content-section {
-      margin-top: 24px;
-      padding: 24px;
-      border: 1px solid rgba(226, 232, 240, 0.86);
-      border-radius: var(--radius);
-      background: var(--card);
-      box-shadow: var(--shadow);
-    }
-    .content-section h2 {
-      margin: 0 0 12px;
-      font-size: 1.45rem;
-    }
-    .content-section h3 { margin: 18px 0 8px; font-size: 1.1rem; }
-    .content-section p {
-      margin: 0 0 14px;
-      color: var(--muted);
-    }
-    .cta-box {
-      margin-top: 24px;
-      padding: 24px;
-      border-radius: var(--radius);
-      text-align: center;
-      background: linear-gradient(135deg, var(--purple), var(--blue));
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: #fff;
-      color: var(--blue);
-      font-weight: 800;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    }
-    .site-footer {
-      margin-top: 28px;
-      color: #64748b;
-      text-align: center;
-      font-size: 0.92rem;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
-    .footer-links a {
-      color: var(--purple);
-      font-weight: 700;
-    }
-    .cmp-table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 0.95rem; }
-    .cmp-table th, .cmp-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; color: var(--muted); }
-    .cmp-table th { background: #f8fafc; color: var(--text); font-weight: 800; }
-    .cmp-table tr:nth-child(even) td { background: #fbfcff; }
-    .faq-list details { border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 10px; padding: 0 16px; }
-    .faq-list summary { padding: 14px 0; font-weight: 800; cursor: pointer; color: var(--text); }
-    .faq-list details p { padding: 0 0 14px; margin: 0; color: var(--muted); }
-    .prose ul { margin: 0 0 14px; padding-left: 22px; }
-    .prose li { margin-bottom: 8px; color: var(--muted); }
-    .pros, .cons { list-style: none; padding-left: 0; margin: 10px 0 16px; }
-    .pros li, .cons li { padding-left: 24px; margin-bottom: 8px; color: var(--muted); position: relative; }
-    .pros li::before { content: "+"; position: absolute; left: 0; font-weight: 800; color: #16a34a; }
-    .cons li::before { content: "\2212"; position: absolute; left: 0; font-weight: 800; color: #dc2626; }
-    .guide-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-    .guide-links a { padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.9rem; font-weight: 700; color: #1f2937; background: #f5f7fb; }
-    .guide-links a:hover { border-color: var(--purple); color: var(--purple); }
-    .source-note { font-size: 0.82rem; color: #94a3b8; }
-    @media (max-width: 640px) {
-      .page { width: min(100% - 22px, 1120px); padding-top: 18px; }
-      .site-header { align-items: flex-start; flex-direction: column; }
-      .header-note { text-align: left; }
-      .hero, .content-section, .cta-box { padding: 18px; border-radius: 15px; }
-    }
-  </style>
-</head>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Free Background Removal API",
-  "description": "A background removal API that processes images without sending them to a cloud server. Transparent pricing, unlimited volume plans, and an API key waitlist — sign up for early access.",
-  "url": "https://bg-remover-free.netlify.app/background-remover-api",
-  "image": "https://bg-remover-free.netlify.app/og-image.png",
-  "datePublished": "2026-08-01T00:00:00+05:30",
-  "dateModified": "2026-08-29T00:00:00+05:30",
-  "inLanguage": "en",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://bg-remover-free.netlify.app/background-remover-api"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "BgClear",
-    "url": "https://bg-remover-free.netlify.app"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "BgClear",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://bg-remover-free.netlify.app/og-image.png"
-    }
-  }
-  }
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "BgClear Background Removal API",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Docker / Kubernetes / Linux",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/PreOrder",
-    "url": "https://bg-remover-free.netlify.app/background-remover-api"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "142"
-  },
-  "description": "Self-hosted background removal API for high-volume use. Free tier available, no per-image fees."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How to get a background removal API key?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Join the waitlist on this page. We'll email you a private API key and self-hosted Docker image when the invite-only beta opens in 2026. No credit card required for early access."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there a free background removal API?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. BgClear offers a free Community tier for non-commercial self-hosted use with rate limits. Commercial plans are one-time license with no per-image fees — unlike pay-per-use alternatives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the pricing for background removal API?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Community plan is free. Startup and Enterprise plans use transparent one-time licensing instead of per-image billing. Exact pricing will be shared with waitlist members before launch."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is this different from Remove.bg API?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Remove.bg requires cloud upload and charges per image processed. BgClear's background removal API is self-hosted: you run the model in your own infrastructure so images never leave your control and there are no usage-based fees."
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://bg-remover-free.netlify.app/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Background Removal API (Waitlist)",
-      "item": "https://bg-remover-free.netlify.app/background-remover-api"
-    }
-  ]
-}
-</script>
-
-<body>
-  <main class="page">
-    <header class="site-header" aria-label="Site header">
-      <a class="brand" href="index.html" aria-label="BgClear home">
-        <span class="brand-mark" aria-hidden="true">BG</span>
-        <span>BgClear</span>
-      </a>
-      <div class="header-note">Free AI background remover. No signup. No watermark.</div>
-    </header>
-    <section class="hero" aria-labelledby="page-title">
-      <h1 id="page-title">Free Background Removal API</h1>
-      <p>An API for background removal that never requires uploading your images to our servers. We ship the model as a self-hosted package you run inside your own infrastructure — you get remove.bg-style output with data-center-grade privacy.</p>
-    </section>
-    <section class="content-section" aria-labelledby="section-1-title">
-      <h2 id="section-1-title">Why We're Building This</h2>
-      <p>Every existing background-removal API (remove.bg, Clipdrop, PhotoRoom) sends your images to their servers and charges per image. For e-commerce catalog teams and apps handling customer photos, that means two problems: <strong>cost that scales with volume</strong> and <strong>sensitive images leaving your control</strong>.</p><p>BgClear's API packages the same in-browser model into a self-hosted container. You run it in your own cloud or on-premise, your images never cross a network boundary you don't control, and there are no per-image fees.</p>
-    </section>
-    <section class="content-section" aria-labelledby="section-2-title">
-      <h2 id="section-2-title">How It Works</h2>
-      <ol class="steps">
-<li>Deploy the container in your environment (Docker, Kubernetes, or serverless).</li>
-<li>Send image bytes to the local endpoint — <code>POST /v1/remove-background</code>.</li>
-<li>Receive a transparent (or white-filled) PNG with alpha mask metadata.</li>
-</ol>
-    </section>
-    <section class="content-section" aria-labelledby="section-3-title">
-      <h2 id="section-3-title">Planned Pricing Model</h2>
-      <div class="table-wrap"><table class="cmp-table"><thead><tr><th>Plan</th><th>Price</th><th>What you get</th><th>Availability</th></tr></thead><tbody><tr><td>Community</td><td>$0</td><td>Non-commercial, self-hosted, rate-limited</td><td>Public release</td></tr><tr><td>Startup</td><td>TBD</td><td>Commercial, one-time license, no per-image fees</td><td>Invite-only</td></tr><tr><td>Enterprise</td><td>TBD</td><td>SLA, audit logs, support</td><td>Invite-only</td></tr></tbody></table></div>
-    </section>
-    <section class="content-section" aria-labelledby="section-4-title">
-      <h2 id="section-4-title">Roadmap</h2>
-      <ul class="pros">
-<li>Docker image and Helm chart</li>
-<li>Batch endpoint for up to 10,000 images per run</li>
-<li>Automatic background color replacement (white, brand colors)</li>
-<li>Webhook for long-running jobs</li>
-</ul>
-     </section>
-    <section class="content-section" aria-labelledby="comparison-title">
-      <h2 id="comparison-title">API vs Alternatives: BgClear vs Remove.bg vs Clipdrop</h2>
-      <table class="cmp-table">
-        <thead><tr><th>Feature</th><th>BgClear API</th><th>Remove.bg API</th><th>Clipdrop API</th></tr></thead>
-        <tbody>
-          <tr><td>Pricing</td><td>Free community tier + one-time license (TBD for commercial)</td><td>Pay-per-image (~$0.019) or $49/mo plan</td><td>$9–$49/mo subscription + credits</td></tr>
-          <tr><td>Free Tier Limits</td><td>Unlimited (self-hosted, rate-limited community plan)</td><td>50 free images / month</td><td>Limited trial credits</td></tr>
-          <tr><td>Response Speed</td><td>&lt;100ms (local inference)</td><td>1–3 seconds (cloud)</td><td>~1–2 seconds (cloud)</td></tr>
-          <tr><td>Max Image Size</td><td>No hard limit (depends on your hardware)</td><td>25 megapixels</td><td>10 megapixels</td></tr>
-          <tr><td>Privacy / Hosting</td><td>Self-hosted, images never leave your infra</td><td>Cloud upload required</td><td>Cloud upload required</td></tr>
-        </tbody>
-      </table>
-      <p class="source-note">* Data as of 2026; actual limits may vary. BgClear prioritizes volume users who want to avoid per-image costs.</p>
-    </section>
-    <section class="content-section" aria-labelledby="code-examples-title">
-      <h2 id="code-examples-title">Code Examples — How to Call the Background Removal API</h2>
-      <h3 style="margin-top:16px;">cURL Example</h3>
-      <pre style="background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;overflow-x:auto;font-size:0.9rem;"><code>curl -X POST https://api.yourdomain.com/v1/remove-background \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -F "image=@/path/to/photo.jpg" \
-  --output transparent.png</code></pre>
-      <h3>JavaScript (fetch) Example</h3>
-      <pre style="background:#0f172a;color:#e2e8f0;padding:14px;border-radius:8px;overflow-x:auto;font-size:0.9rem;"><code>const formData = new FormData();
-formData.append('image', file); // from &lt;input type="file"&gt;
-
-const res = await fetch('https://api.yourdomain.com/v1/remove-background', {
-  method: 'POST',
-  headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
-  body: formData
-});
-const blob = await res.blob();
-// Use the blob as &lt;img src&gt; or download</code></pre>
-      <p class="source-note">Replace the endpoint with your self-hosted URL. API key is sent via waitlist invite.</p>
-    </section>
-    <section class="content-section" aria-labelledby="section-5-title">
-      <h2 id="section-5-title">Join the Waitlist</h2>
-      <div class="card" style="margin-top:12px;">
-  <h3 style="margin-top:0;">Get Early Access</h3>
-  <p>Leave your email and we'll invite you the week the API opens.</p>
-  <form name="api-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <p style="display:none" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
-    <input type="hidden" name="form-name" value="api-waitlist">
-    <label>Email <input type="email" name="email" placeholder="you@company.com" required></label>
-    <label>Intended use <input type="text" name="use_case" placeholder="e.g. e-commerce catalog, app"></label>
-    <button class="btn" type="submit">Join the Waitlist</button>
-  </form>
-  <script>
-    (function () {
-      var form = document.querySelector('form[name="api-waitlist"]');
-      if (!form) return;
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        var body = new URLSearchParams(new FormData(form)).toString();
-        fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body })
-          .then(function (r) { if (r.ok || r.redirected) form.innerHTML = `<p style="color:#16a34a;font-weight:700;margin:0;">You're on the list — we'll email you an invite.</p>`; else form.submit(); })
-          .catch(function () { form.submit(); });
-      });
-    })();
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Background Removal APIs vs Browser Processing","description":"A guide to hosted APIs, self-hosted software and local browser processing. BgClear currently provides a browser tool, not an API.","url":"https://bg-remover-free.netlify.app/background-remover-api","mainEntityOfPage":"https://bg-remover-free.netlify.app/background-remover-api","image":"https://bg-remover-free.netlify.app/og-image.png","inLanguage":"en","author":{"@type":"Organization","name":"BgClear","url":"https://bg-remover-free.netlify.app/"},"publisher":{"@type":"Organization","name":"BgClear","logo":{"@type":"ImageObject","url":"https://bg-remover-free.netlify.app/og-image.png"}}}
   </script>
-</div>
-    </section>
-    <section class="content-section" aria-labelledby="faq-title">
-      <h2 id="faq-title">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <details>
-          <summary>How to get a background removal API key?</summary>
-          <p>Join the waitlist on this page. We'll email you a private API key and self-hosted Docker image when the invite-only beta opens in 2026. No credit card required for early access.</p>
-        </details>
-        <details>
-          <summary>Is there a free background removal API?</summary>
-          <p>Yes. BgClear offers a free Community tier for non-commercial self-hosted use with rate limits. Commercial plans are one-time license with no per-image fees — unlike pay-per-use alternatives.</p>
-        </details>
-        <details>
-          <summary>What is the pricing for background removal API?</summary>
-          <p>Community plan is free. Startup and Enterprise plans use transparent one-time licensing instead of per-image billing. Exact pricing will be shared with waitlist members before launch.</p>
-        </details>
-        <details>
-          <summary>How is this different from Remove.bg API?</summary>
-          <p>Remove.bg requires cloud upload and charges per image processed. BgClear's background removal API is self-hosted: you run the model in your own infrastructure so images never leave your control and there are no usage-based fees.</p>
-        </details>
-      </div>
-    </section>
-    <section class="content-section" aria-labelledby="related-title">
-      <h2 id="related-title">Related Guides &amp; Comparisons</h2>
-      <div class="guide-links"><a href="index.html">Try the Free Web Tool</a><a href="privacy-policy.html">Privacy Policy</a>
-      </div>
-    </section>
-    <div class="cta-box">
-      <h3>Ready to remove a background for free?</h3>
-      <a class="btn" href="index.html">Open the Tool</a>
-    </div>
-    
-        <nav aria-label="More guides and languages" style="margin-top:24px;padding-top:20px;border-top:1px solid #e5e7eb;">
-      <div style="font-size:0.8rem;color:#6b7280;margin-bottom:10px;">More guides &amp; languages:</div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="car-vehicle-photo-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128663; Car &amp; Vehicle Photos</a>
-        <a href="food-photography-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127829; Food Photography</a>
-        <a href="real-estate-photo-editing.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127968; Real Estate Photos</a>
-        <a href="transparent-images-presentations.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128444; Transparent for Presentations</a>
-        <a href="tshirt-apparel-mockup-background.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#128085; T-Shirt &amp; Apparel Mockups</a>
-        <a href="best-free-background-remover-2026.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127942; Best Free Remover 2026</a>
-        <a href="hindi.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127470;&#127475; &#2361;&#2367;&#2344;&#2381;&#2342;&#2368; &#2350;&#2375;&#2306; &#2311;&#2360;&#2381;&#2340;&#2375;&#2350;&#2366;&#2354; &#2325;&#2352;&#2375;&#2306;</a>
-        <a href="it.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127470;&#127481; Usa in Italiano</a>
-        <a href="fr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127467;&#127479; Utiliser en Fran&ccedil;ais</a>
-        <a href="de.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127465;&#127466; Auf Deutsch nutzen</a>
-        <a href="tr.html" style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;font-size:0.85rem;text-decoration:none;color:#1f2937;background:#f5f7fb;">&#127481;&#127479; T&uuml;rk&ccedil;e Kullan&imath;n</a>
-      </div>
-    </nav>
-
-    <footer class="site-footer">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      BgClear background remover. Free online image background removal.
-    </footer>
-  </main>
+</head>
+<body>
+<main class="page">
+  <header class="site-header"><a class="brand" href="/" aria-label="BgClear home"><span class="brand-mark" aria-hidden="true">BG</span>BgClear</a><span class="header-note">Free browser-based background removal</span></header>
+  <section class="hero" aria-labelledby="page-title">
+    <h1 id="page-title">Background removal APIs vs browser processing</h1>
+    <p><strong>BgClear currently provides a browser-based background remover, not a hosted API or downloadable server package.</strong> There is no BgClear API key, Docker distribution or production API endpoint to request from this page.</p>
+    <p>If you need to integrate background removal into an application, choose an actual API or a separately licensed software library. If you want to process photos manually without an account, use the browser tool.</p>
+    <a class="btn" href="/#uploadArea">Open the free browser tool</a>
+  </section>
+  <section class="content-section" aria-labelledby="options-title">
+    <h2 id="options-title">Three different integration models</h2>
+    <div class="table-wrap"><table>
+      <caption>Choose by where processing runs and who operates it</caption>
+      <thead><tr><th scope="col">Workflow</th><th scope="col">How it works</th><th scope="col">What you must manage</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Hosted API</th><td>Your application sends images to a provider and receives results.</td><td>Authentication, current usage limits, cost, retention terms, retries and provider availability.</td></tr>
+        <tr><th scope="row">Self-hosted software</th><td>You deploy a supported package and model on infrastructure you control.</td><td>Software and model licenses, hardware, updates, scaling and an endpoint implementation.</td></tr>
+        <tr><th scope="row">BgClear browser tool</th><td>A person selects photos and processing runs on their device.</td><td>A compatible browser, model downloads and available device memory. It is not a server integration.</td></tr>
+      </tbody>
+    </table></div>
+    <p>A JavaScript library used inside a webpage is not the same as a hosted HTTP API. A self-hosted package also does not become free to operate just because it avoids per-image provider fees.</p>
+  </section>
+  <section class="content-section" aria-labelledby="evaluate-title">
+    <h2 id="evaluate-title">What to check before choosing an API</h2>
+    <ol>
+      <li><strong>Test the output:</strong> use representative portraits, products and difficult edges. Inspect the downloaded file, not just a small preview.</li>
+      <li><strong>Check the contract:</strong> supported formats, maximum input size, output dimensions, transparency and whether processing is synchronous or asynchronous.</li>
+      <li><strong>Check failure behaviour:</strong> request timeouts, rate limits, retry guidance and whether failed requests consume credits.</li>
+      <li><strong>Calculate your own volume:</strong> compare the current plan against expected requests and any reprocessing, rather than relying on an old price table.</li>
+      <li><strong>Review deployment and usage terms:</strong> check image rights, software/model licensing and data-handling requirements for your application.</li>
+    </ol>
+    <p>For current vendor information, start with <a href="https://www.remove.bg/">Remove.bg</a> or <a href="https://www.photoroom.com/">Photoroom</a> and follow their API documentation. This page does not claim to verify their current pricing, limits or licenses.</p>
+  </section>
+  <section class="content-section" aria-labelledby="browser-title">
+    <h2 id="browser-title">When the browser tool is enough</h2>
+    <p>BgClear fits manual photo tasks: select up to 20 images on the main tool, review each cutout, choose a transparent or solid-color background, and download PNG, JPG or WebP. Processing speed and reliability depend on your device and the selected model.</p>
+    <p>For unattended jobs, webhooks, shared processing queues or an application backend, evaluate an integration designed for those requirements rather than automating the BgClear interface.</p>
+    <nav class="guide-links" aria-label="Related workflows"><a href="/batch-background-removal-workflow">Batch photo workflow</a><a href="/no-upload-background-remover">How local processing works</a><a href="/image-format-guide">PNG, JPG and WebP</a><a href="/guide">Background removal guide</a></nav>
+  </section>
+  <section class="content-section" aria-labelledby="faq-title">
+    <h2 id="faq-title">Frequently asked questions</h2>
+    <details><summary>Can I get a BgClear API key?</summary><p>No. BgClear currently offers the browser tool only. This page does not offer an API key or a waitlist for an announced release.</p></details>
+    <details><summary>Is browser processing a replacement for an API?</summary><p>It can meet a manual editing need, but it does not provide authentication, server endpoints or unattended processing for your application.</p></details>
+    <details><summary>Does BgClear provide Docker or Kubernetes packages?</summary><p>No downloadable server package is offered here. Evaluate an existing self-hosted project separately and check its software and model licenses before deployment.</p></details>
+  </section>
+  <footer class="site-footer"><nav class="footer-links" aria-label="Footer"><a href="/">Home</a><a href="/about">About</a><a href="/terms">Terms</a><a href="/privacy-policy">Privacy policy</a><a href="/contact">Contact</a></nav></footer>
+</main>
 </body>
 </html>
