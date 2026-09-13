@@ -281,6 +281,19 @@
       <p>Scanned signatures need transparent backgrounds to work well in the digital world. A transparent PNG lets the ink strokes sit cleanly on any colour — white contracts, blue email backgrounds, or watermarked forms — without a visible box. The challenge is getting that transparency without spending money on software or hiring a designer. That is exactly what BgClear solves. It runs entirely in your browser, processes your signature image with AI, and hands you back a transparent PNG in seconds. No uploads, no accounts, no fees.</p>
     </section>
 
+    <section class="content-section" aria-labelledby="signature-limitations-title" style="border:1px solid #fde68a;background:#fffbeb;">
+      <h2 id="signature-limitations-title">An honest note on signatures and fine strokes</h2>
+      <p>BgClear's AI is built to isolate <em>subjects</em> &mdash; people, products, pets, food &mdash; from their backgrounds. Signatures, ink strokes and other thin-lined content are a noticeably weaker fit. A signature is often just a few pixels wide, with anti-aliased edges that blur into the paper, faint grey tones from the scanner, and low contrast against a white or off-white background. On those, the tool is less reliable than on photos.</p>
+      <p>What this means in practice:</p>
+      <ul class="prose">
+        <li>A dark, bold signature on clean, bright white paper with good contrast has the best chance of a clean first-pass cutout &mdash; but <strong>inspect the result at actual size</strong> before using it in a document.</li>
+        <li>Light grey ink, pencil, faint ballpoint, or a shadowed/grainy scan are the cases where strokes get partially erased, thinned, or left with a faint halo. Expect to re-check these rather than trust a one-shot result.</li>
+        <li>For documents where a imperfect cutout is risky (contracts, legal forms), paste the result onto the target background and view it there before sending &mdash; some artifacts only show against colour.</li>
+      </ul>
+      <p>We keep this page because many signature scans <em>do</em> clean up well enough &mdash; but we would rather you went in with the right expectation than assumed it handles every faint or low-contrast signature flawlessly.</p>
+    </section>
+
+
     <section class="content-section" aria-labelledby="why-remove">
       <h2 id="why-remove">Why Remove Signature Backgrounds?</h2>
       <p>When you sign a paper document, the signature and the paper merge into a single flat image. Every scanner — whether a flatbed at the office, a phone camera app, or a portable document scanner — captures not just the ink but the entire surface around it. The result is a rectangular image where the ink sits on a background that is rarely pure white. Even high-end scanners produce subtle gradients, moiré patterns, or yellowish tints from the paper stock.</p>

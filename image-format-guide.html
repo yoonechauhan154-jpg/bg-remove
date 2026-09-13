@@ -860,6 +860,17 @@
           <p>JPG has no alpha channel and never will — the moment you save a cutout as JPG, every "transparent" pixel collapses into solid white or black. That's a feature if you've already placed your subject onto a final background (white listing shots, social posts, email banners) because it gives you the smallest files of the three. It's a trap only if you use it too early. Save JPG after compositing, never before — and know that's the whole rule.</p>
         </article>
       </div>
+      <h2 id="save-transparent-title" style="margin-top:36px">How to save your image with a transparent background</h2>
+      <p>The format you choose in BgClear's <strong>Format</strong> menu must match the background you choose in the <strong>Background</strong> menu. Get the combination wrong and the transparency disappears on download — even though the preview looked right. Here is the reliable sequence:</p>
+      <ol>
+        <li>Upload your photo (JPG, PNG or WebP) and wait for the background to be removed. Check the cutout edges in the preview before exporting.</li>
+        <li>In the <strong>Background</strong> menu, choose <strong>Transparent</strong>. (If you actually want a white backdrop, choose <strong>White</strong> here and skip to step 4.)</li>
+        <li>In the <strong>Format</strong> menu, choose <strong>PNG</strong> (or <strong>WebP</strong> for a smaller web file). Then download.</li>
+      </ol>
+      <p><strong>Why PNG, not JPG?</strong> JPG cannot hold transparency — there is no alpha channel. If you pick Transparent + JPG, the "transparent" pixels get filled with solid white or black on export, and the cutout is gone. PNG keeps the transparency; WebP keeps it at a smaller size but is not accepted by every upload form. Use JPG only after you have placed the subject onto a final background.</p>
+      <p><strong>Checking the result:</strong> some image viewers and email clients display a transparent PNG on a white or grey checkerboard. To confirm it is genuinely transparent, drop the file onto a coloured background — if you see the colour through the empty areas, the transparency held.</p>
+      <p><strong>Known limitation:</strong> BgClear isolates the subject; it does not delete every pixel of a given colour. A white subject on a white background, a white logo, or white text can be partially erased because the AI reads them as "background". Inspect light-on-light results carefully before using them.</p>
+
       <h2 style="margin-top:28px">What the File Sizes Actually Look Like</h2>
       <p>File size is where people get stuck, so here's a realistic sense of scale using a typical 1200×1200 product photo as the example. Actual numbers vary with image complexity — flat colors compress tiny, busy textures compress huge — but the proportions are consistent.</p>
       <table class="cmp-table">
