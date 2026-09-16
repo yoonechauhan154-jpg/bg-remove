@@ -1,33 +1,93 @@
 # BgClear
 
-> Free online background remover tool. Remove image backgrounds instantly, in your browser, with no signup, no watermark, and no image uploaded to a server. Supports bulk processing of up to 20 images at once.
+> BgClear is a free, private, browser-based AI background remover. It removes image backgrounds entirely on the user's device — no signup, no watermark, no image upload to any server — and exports transparent PNG, JPG or WebP. It processes up to 20 images in one batch.
 
-## About
-BgClear is a 100% free, ad-supported AI background remover. Upload a JPG, PNG, or WebP photo (up to 10MB) and BgClear removes the background using an in-browser AI model, then lets you download a transparent PNG. No account, no credit card, no watermark.
+BgClear is an ad-supported web tool (not a paid product, no subscription). Background removal runs client-side in the browser using an open AI segmentation model, so photos never leave the device. First use of standard mode downloads a one-time ~30 MB model into the browser cache; an optional "High Quality Mode" (BiRefNet, ~490 MB, opt-in) targets difficult subjects such as logos, text and graphics. BgClear is a manual browser tool: it is **not** a hosted API and there is no downloadable server package.
 
-## Key Pages
-- Homepage / Tool: https://bg-remover-free.netlify.app/ — Upload a photo and remove the background free, in bulk (up to 20 images)
-- Guide: https://bg-remover-free.netlify.app/guide.html — Complete guide to background removal techniques and best practices
-- How AI Works: https://bg-remover-free.netlify.app/how-ai-works.html — How the AI background removal technology works
-- BgClear vs Remove.bg: https://bg-remover-free.netlify.app/vs-removebg.html — Feature and pricing comparison
-- Passport Photo: https://bg-remover-free.netlify.app/passport-photo.html — Create passport/ID photos with a white background
-- E-commerce Photos: https://bg-remover-free.netlify.app/ecommerce-photos.html — Remove backgrounds from product photos for Amazon, Flipkart, Meesho
-- About: https://bg-remover-free.netlify.app/about.html
-- Contact: https://bg-remover-free.netlify.app/contact.html
-- Privacy Policy: https://bg-remover-free.netlify.app/privacy-policy.html
+Key facts:
+- Free, ad-supported. No account, no credit card, no watermark.
+- Processing is client-side. Images are not uploaded to a BgClear server.
+- Batch limit: up to 20 images per run, processed sequentially.
+- Input: JPG, PNG, WebP. Output: PNG (keeps transparency), JPG (no transparency), or WebP.
+- Background options after removal: Transparent, White, Black, or a custom colour.
+- Languages: English (default), Hindi, Italian, French, German, Turkish.
+- Known weakness: built for subject isolation (people, products, pets, food); less reliable on logos, thin text, fine strokes and faint scanned signatures.
+
+## Core tool
+
+- [BgClear — Free Background Remover](https://bg-remover-free.netlify.app/): The main browser tool. Upload up to 20 images, remove backgrounds, choose Transparent/White/Black/custom, and download as PNG, JPG or WebP.
+- [How AI background removal works](https://bg-remover-free.netlify.app/how-ai-works): Plain-English explanation of segmentation, edge detection and alpha matting.
+
+## Guides
+
+- [Complete Guide to Background Removal](https://bg-remover-free.netlify.app/guide): Hub page covering techniques, common mistakes, tools and workflows.
+- [PNG vs JPG vs WebP — which format to export](https://bg-remover-free.netlify.app/image-format-guide): When to use each format, why JPG cannot hold transparency, and how to save an image with a transparent background.
+- [Photography tips for cleaner cut-outs](https://bg-remover-free.netlify.app/photography-tips): Lighting, contrast and framing advice that improves AI results.
+- [Why AI struggles with hair and fur](https://bg-remover-free.netlify.app/hair-fur-background-removal): The hardest edges to cut out, and how to improve them.
+- [Troubleshooting background removal problems](https://bg-remover-free.netlify.app/troubleshooting): Fixes for jagged edges, loading issues and transparency preview problems.
+
+## Use cases
+
+- [Logo background — make a logo background transparent](https://bg-remover-free.netlify.app/logo-background): Transparent PNG logo workflow, plus an honest note on where the tool is weaker.
+- [Passport and ID photo background](https://bg-remover-free.netlify.app/passport-photo): Creating a plain white background for passport/ID style photos.
+- [E-commerce product photos](https://bg-remover-free.netlify.app/ecommerce-photos): Preparing product images for Amazon, Flipkart, Meesho and Shopify.
+- [Shopify product photos](https://bg-remover-free.netlify.app/shopify-product-photos): Consistency and sizing guidance for Shopify listings.
+- [Etsy product photo guide](https://bg-remover-free.netlify.app/etsy-product-photo-guide): Product photography guidance for Etsy sellers.
+- [Real estate photo editing](https://bg-remover-free.netlify.app/real-estate-photo-editing): Sky replacement prep and listing photo cleanup.
+- [Car and vehicle listing photos](https://bg-remover-free.netlify.app/car-vehicle-photo-background): Cleaner photos for OLX and Cars24 style listings.
+- [Jewellery product photography](https://bg-remover-free.netlify.app/jewelry-product-photography): Background handling for rings and small reflective products.
+- [Food photography backgrounds](https://bg-remover-free.netlify.app/food-photography-background): Menu and delivery-app photo cleanup.
+- [Social media profile pictures](https://bg-remover-free.netlify.app/social-media-photos): Backgrounds that work at small display sizes.
+- [LinkedIn banner and profile background](https://bg-remover-free.netlify.app/linkedin-banner-background): Banner and profile image preparation.
+- [Resume and CV photo background](https://bg-remover-free.netlify.app/resume-cv-photo-background): Plain-background photo preparation for job applications.
+- [Transparent images for presentations](https://bg-remover-free.netlify.app/transparent-images-presentations): Using transparent PNGs in PowerPoint and Google Slides.
+- [Batch background removal workflow](https://bg-remover-free.netlify.app/batch-background-removal-workflow): Using the 20-image batch mode efficiently.
+- [Make background white](https://bg-remover-free.netlify.app/make-background-white): Producing a pure white background for listings and documents.
+- [Glass and transparent objects](https://bg-remover-free.netlify.app/glass-transparent-object-background): Bottles, glassware and other transparent subjects.
+
+## E-commerce and document requirements
+
+- [Amazon white background rule explained](https://bg-remover-free.netlify.app/amazon-white-background-rule): What Amazon's pure-white main image requirement means and how to meet it.
+- [Amazon product photo background](https://bg-remover-free.netlify.app/amazon-product-photo-background): The RGB 255/255/255 rule and 85% frame guidance.
+- [Flipkart and Meesho product photo requirements](https://bg-remover-free.netlify.app/flipkart-meesho-product-photo): Seller image requirements for the Indian marketplaces.
+- [PAN card and Aadhaar photo requirements (India)](https://bg-remover-free.netlify.app/pan-aadhaar-photo-guide): Government ID photo background guidance.
+- [Exam photo specifications](https://bg-remover-free.netlify.app/exam-photo-background): SSC, UPSC, IBPS and RRB photo requirements.
+- [Driving licence photo background](https://bg-remover-free.netlify.app/driving-licence-photo-background): RTO photo specifications for India.
+- [Visa photo background colours](https://bg-remover-free.netlify.app/visa-photo-background-color): White, blue and red background conventions by country.
+
+Note: BgClear produces a visual image file. It does not certify that a photo will be accepted by any government authority or marketplace — always check the current requirements of the receiving body.
+
+## Comparisons
+
+- [BgClear vs Remove.bg](https://bg-remover-free.netlify.app/vs-removebg): Workflow comparison; check Remove.bg's own pricing page for current terms.
+- [BgClear vs Canva](https://bg-remover-free.netlify.app/bgclear-vs-canva): Free browser tool vs Canva Pro's paywalled background remover.
+- [BgClear vs Photoroom](https://bg-remover-free.netlify.app/vs-photoroom): Local cut-out workflow vs Photoroom's studio features.
+- [Background removal APIs vs browser processing](https://bg-remover-free.netlify.app/background-remover-api): Explains why BgClear is a browser tool and not a hosted API or self-hosted package.
+- [What "free" actually means across background removers](https://bg-remover-free.netlify.app/free-background-remover-comparison): Limits, watermarks and signup requirements compared.
 
 ## Languages
-- English (default): https://bg-remover-free.netlify.app/
-- Hindi: https://bg-remover-free.netlify.app/hindi.html
-- Italian: https://bg-remover-free.netlify.app/it.html
-- French: https://bg-remover-free.netlify.app/fr.html
-- German: https://bg-remover-free.netlify.app/de.html
-- Turkish: https://bg-remover-free.netlify.app/tr.html
 
-## Technical
-- Processing happens client-side in the browser (no image upload to a server).
-- Supported formats: JPG, PNG, WebP (up to 10MB).
-- No signup, no watermark, free tier has no limits on number of images.
+- [English (default)](https://bg-remover-free.netlify.app/)
+- [Hindi / हिन्दी](https://bg-remover-free.netlify.app/hindi)
+- [Italian / Italiano](https://bg-remover-free.netlify.app/it)
+- [French / Français](https://bg-remover-free.netlify.app/fr)
+- [German / Deutsch](https://bg-remover-free.netlify.app/de)
+- [Turkish / Türkçe](https://bg-remover-free.netlify.app/tr)
 
-## Contact
-See https://bg-remover-free.netlify.app/contact.html
+## Technical notes
+
+- Background removal runs client-side; the AI model is fetched from a CDN at first use and cached by the browser. Repeat visits reuse the cached model.
+- First use of standard mode downloads roughly 30 MB. High Quality Mode downloads roughly 490 MB and works best in a Chromium browser with WebGPU.
+- Large images consume more memory; processing may fail on low-memory mobile devices.
+- No backend image-processing service exists for this site.
+
+## Optional
+
+- [About BgClear](https://bg-remover-free.netlify.app/about)
+- [Contact](https://bg-remover-free.netlify.app/contact)
+- [Privacy policy](https://bg-remover-free.netlify.app/privacy-policy)
+- [Terms](https://bg-remover-free.netlify.app/terms)
+- [Changelog](https://bg-remover-free.netlify.app/changelog)
+- [Sitemap](https://bg-remover-free.netlify.app/sitemap.xml)
+- [No-upload background remover — how local processing is guaranteed](https://bg-remover-free.netlify.app/no-upload-background-remover)
+

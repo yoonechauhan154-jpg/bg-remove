@@ -38,6 +38,18 @@
   <link rel="preconnect" href="https://esm.sh" crossorigin>
   <link rel="dns-prefetch" href="https://esm.sh">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <!-- Model-asset hosts. The standard AI model and the onnxruntime WASM files
+       are fetched from staticimgly.com on first use (verified: the library's
+       default publicPath is
+       https://staticimgly.com/@imgly/background-removal-data/1.4.5/dist/).
+       Preconnecting removes DNS + TLS setup from that first download.
+       High Quality Mode instead pulls Transformers.js from jsDelivr and the
+       BiRefNet weights from Hugging Face, so those get a cheaper dns-prefetch. -->
+  <link rel="preconnect" href="https://staticimgly.com" crossorigin>
+  <link rel="dns-prefetch" href="https://staticimgly.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://huggingface.co">
+
 
 
 <script type="application/ld+json">
@@ -631,6 +643,67 @@
       transform: translateY(-4px);
       box-shadow: var(--shadow-float-lg);
     }
+    /* Skeleton placeholders shown in the results grid while the AI model
+       downloads and images are processed. Gives the wait visible structure and
+       prevents layout jump when real result cards arrive. */
+    .skeleton-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: var(--shadow-float);
+    }
+
+    .skeleton-stage {
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(90deg, #eef2f7 25%, #e2e8f0 37%, #eef2f7 63%);
+      background-size: 400% 100%;
+      animation: skeletonSweep 1.4s ease-in-out infinite;
+    }
+
+    .skeleton-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px 12px;
+    }
+
+    .skeleton-line,
+    .skeleton-button {
+      background: linear-gradient(90deg, #eef2f7 25%, #e2e8f0 37%, #eef2f7 63%);
+      background-size: 400% 100%;
+      animation: skeletonSweep 1.4s ease-in-out infinite;
+    }
+
+    .skeleton-line {
+      height: 10px;
+      border-radius: 999px;
+      flex: 1;
+    }
+
+    .skeleton-button {
+      width: 64px;
+      height: 26px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+
+    @keyframes skeletonSweep {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .skeleton-stage,
+      .skeleton-line,
+      .skeleton-button {
+        animation: none;
+      }
+    }
+
 
     .bulk-stage {
       display: grid;
@@ -1570,6 +1643,7 @@
     let removeBackgroundPromise = null;
     let birefnetPromise = null; // High Quality Mode: keeps { model, processor } in memory for the session
     let isProcessing = false;
+    let modelLoadedOnce = false; // true after the first standard-mode run, once the model is cached
 
     function showError(message) {
       errorBox.textContent = message;
@@ -1590,7 +1664,39 @@
     function setMode(mode) {
       uploadArea.style.display = mode === "upload" ? "grid" : "none";
       statusBox.style.display = mode === "processing" ? "flex" : "none";
-      resultBox.style.display = mode === "result" ? "block" : "none";
+      // Keep the results area visible while processing so the skeleton
+      // placeholders hold the final layout during the one-time model download,
+      // instead of the page collapsing to a blank area.
+      resultBox.style.display = mode === "upload" ? "none" : "block";
+    }
+
+    // Skeleton placeholders for the results grid. The AI model is fetched
+    // lazily on the first run, so this is what the user sees during the
+    // download-and-process wait.
+    function renderSkeletons(count) {
+      const shown = Math.max(1, Math.min(count, 6));
+      bulkGrid.innerHTML = "";
+      for (let i = 0; i < shown; i++) {
+        const card = document.createElement("article");
+        card.className = "skeleton-card";
+        card.setAttribute("aria-hidden", "true");
+
+        const stage = document.createElement("div");
+        stage.className = "skeleton-stage";
+
+        const meta = document.createElement("div");
+        meta.className = "skeleton-meta";
+        const line = document.createElement("div");
+        line.className = "skeleton-line";
+        const button = document.createElement("div");
+        button.className = "skeleton-button";
+        meta.appendChild(line);
+        meta.appendChild(button);
+
+        card.appendChild(stage);
+        card.appendChild(meta);
+        bulkGrid.appendChild(card);
+      }
     }
 
     async function getRemoveBackground() {
@@ -1826,8 +1932,10 @@
       isProcessing = true;
       revokeResultUrls();
       bulkGrid.innerHTML = "";
+      downloadAllButton.style.display = "none";
       progressFill.style.width = "0%";
       setMode("processing");
+      renderSkeletons(validFiles.length);
 
       const failed = [...invalidMessages];
 
@@ -1839,6 +1947,12 @@
         if (useHighQuality) {
           await getBirefnet();
         } else {
+          // Separate the one-time model download from per-image processing.
+          // On a first visit the download is the slow part, so the user gets
+          // told which phase they are actually waiting on.
+          if (!modelLoadedOnce) {
+            statusText.textContent = "First run: fetching the AI model once (about 30 MB). Later visits reuse the browser cache and start processing immediately. Your image is never uploaded.";
+          }
           removeBackground = await getRemoveBackground();
 
           if (typeof removeBackground !== "function") {
@@ -1881,6 +1995,9 @@
               blob: resultBlob,
               base: (file.name.replace(/\.[^.]+$/, "") || "image")
             });
+
+            // The standard model has now been fetched and cached at least once.
+            if (!useHighQuality) modelLoadedOnce = true;
           } catch (error) {
             console.error(error);
             failed.push(useHighQuality
@@ -1939,6 +2056,24 @@
         }, index * 350);
       });
     }
+
+    // Warm-up on user intent: when the pointer enters (or the area is focused),
+    // start importing the model module so the JS bundle and the TLS connection
+    // to the CDN are ready before the user finishes picking a file.
+    // Deliberately NOT fetching the ~30 MB model weights here — that would spend
+    // the visitor's bandwidth before they have actually chosen an image.
+    let warmUpStarted = false;
+    function warmUpModel() {
+      if (warmUpStarted || modelLoadedOnce || hqModeCheckbox.checked) return;
+      warmUpStarted = true;
+      getRemoveBackground().catch(() => {
+        removeBackgroundPromise = null;
+        warmUpStarted = false;
+      });
+    }
+    ["pointerenter", "pointerdown", "focus", "keydown"].forEach((eventName) => {
+      uploadArea.addEventListener(eventName, warmUpModel, { passive: true });
+    });
 
     uploadArea.addEventListener("click", () => fileInput.click());
     uploadButton.addEventListener("click", (event) => {

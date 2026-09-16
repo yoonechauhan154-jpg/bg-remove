@@ -824,6 +824,45 @@
     }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1294547754833643" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {"@type": "Question",
+   "name": "Uploading to Amazon, Flipkart, or Etsy?",
+   "acceptedAnswer": {"@type": "Answer", "text": "These marketplaces want a flat white backdrop on the main image, not a transparent file \u2014 their zoom viewers and listing templates assume a filled background. So: cut out the subject, drop it onto pure white, then save as JPG to keep the upload small. Keep the transparent PNG tucked away as your master copy for ads and your own site."}},
+  {"@type": "Question",
+   "name": "Building a website or app icon?",
+   "acceptedAnswer": {"@type": "Answer", "text": "You want the cutout to sit invisibly on top of whatever the page throws behind it \u2014 a gradient hero, a dark footer, a card. PNG or WebP with transparency is the only way to get that invisible blend. If the site is image-heavy, reach for WebP; it'll shave a meaningful slice off your page weight."}},
+  {"@type": "Question",
+   "name": "Sending to a print shop?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Printers are literal-minded: they take the file at face value, and a JPG has no transparency to honor, so your subject arrives wrapped in a white box. Send a high-resolution PNG at the real print dimensions and confirm the alpha channel survives their prepress pass."}},
+  {"@type": "Question",
+   "name": "Need the smallest possible file for a slow connection?",
+   "acceptedAnswer": {"@type": "Answer", "text": "WebP is the winner here \u2014 it carries the same alpha channel as PNG but compresses harder, so you keep transparency without dragging a 3MB file across a bad connection. By 2026, \"does this device open WebP?\" has basically become a non-question."}},
+  {"@type": "Question",
+   "name": "Emailed a cutout to a client who \"can't open WebP\"?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Stop arguing and send PNG. Compatibility outranks compression every time, and a 1MB difference in an attachment isn't worth a client side-eye. Reserve WebP for places you control \u2014 your own website, where the benefits actually land."}},
+  {"@type": "Question",
+   "name": "Why does my transparent PNG still show a white box on some websites?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Two likely culprits: the file was saved as a JPG somewhere along the way (which erased the transparency), or the site converted it during upload. Always check the file extension of what you actually uploaded \u2014 \"PNG\" in the file name doesn't guarantee PNG encoding."}},
+  {"@type": "Question",
+   "name": "Can I convert a JPG to a transparent PNG?",
+   "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 and this is a classic trap. A JPG has no transparency data to preserve; converting it just re-encodes a flat image. You have to remove the background first (that's what BgClear does), then export as PNG. Conversion tools can't invent transparency."}},
+  {"@type": "Question",
+   "name": "Is WebP as good as PNG for quality?",
+   "acceptedAnswer": {"@type": "Answer", "text": "For the vast majority of images, yes \u2014 WebP handles both photographic and sharp-edged content well. The quality difference you might spot on a PNG is the slightly better edge rendering for ultra-sharp text at high zoom. At normal display sizes, it's a non-issue."}},
+  {"@type": "Question",
+   "name": "What format do Instagram and LinkedIn accept?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Both accept JPG, PNG, and WebP. Profile pictures and feed posts work fine as JPG on white, or PNG if you're using transparency in a design. Upload the largest reasonable version \u2014 platforms downscale, they don't upscale."}},
+  {"@type": "Question",
+   "name": "Does file format affect SEO or page speed?",
+   "acceptedAnswer": {"@type": "Answer", "text": "Indirectly, yes \u2014 page speed is a ranking factor, and heavy images are one of the main speed killers. Serving WebP (or properly compressed JPGs for photos) on your site is a legitimate, easy win for both load time and search performance."}}
+ ]
+}
+</script>
 </head>
 <body>
   <div class="bg-blob bg-blob--1" aria-hidden="true"></div>

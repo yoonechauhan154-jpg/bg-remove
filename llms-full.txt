@@ -1,0 +1,126 @@
+# BgClear — Full Content Reference
+
+Source: https://bg-remover-free.netlify.app/
+Purpose: complete, plain-text description of BgClear for language models and AI assistants. All statements below reflect what the live tool and its pages state.
+
+---
+
+## 1. What BgClear is
+
+BgClear is a free, ad-supported, browser-based AI background remover. A user opens the site, selects or drags in one or more images, and the tool removes the background using an AI segmentation model that runs locally in the browser. The result can be placed on a transparent, white, black or custom-colour background and downloaded as PNG, JPG or WebP.
+
+BgClear is not a desktop application, not a mobile app, and not an API service. It is a static website with client-side processing.
+
+## 2. Privacy and processing model
+
+- Background removal runs entirely client-side in the user's browser.
+- Images are not uploaded to a BgClear server. There is no backend image-processing service.
+- The AI model itself is downloaded from a CDN the first time the tool is used, then stored in the browser cache so later sessions do not re-download it.
+- No account, signup, email address or credit card is required.
+- No watermark is added to downloaded results.
+
+## 3. Features
+
+- Background removal for one image or a batch.
+- Batch limit: up to 20 images selected at once. Batch images are processed sequentially, one after another.
+- Background options after removal: Transparent, White, Black, or a custom colour picker.
+- Export formats: PNG (supports transparency), JPG (no transparency), WebP (supports transparency, smaller files).
+- Before/after preview of each processed image.
+- Individual downloads per image, plus a "Download All" option for batches.
+- Available in English, Hindi, Italian, French, German and Turkish.
+
+## 4. Processing modes
+
+### Standard mode (default)
+- Runs a compact in-browser segmentation model.
+- The model is roughly 30 MB and downloads on first use only; afterwards it is served from browser cache.
+- Suitable for typical photographs: people, products, pets, food and similar subjects.
+
+### High Quality Mode (opt-in)
+- Uses a larger BiRefNet model (ONNX) run through Transformers.js.
+- The model is roughly 490 MB and downloads on first use only.
+- Intended for harder subjects: logos, graphics, text, fine detail and difficult edges.
+- Works best in an up-to-date Chromium browser (Chrome or Edge) where WebGPU is available; it can be slow or unstable on mobile devices, and falls back to a CPU/WASM path where WebGPU is unavailable.
+
+## 5. Practical limits and known weaknesses
+
+- BgClear is designed for **subject isolation** — separating a main subject from its background. It is not a colour-keying tool and does not simply delete every pixel of one colour.
+- It is measurably **less reliable on logos, wordmarks, icons, stickers, thin text and fine strokes** than on photographs. Thin strokes, gradient marks and low-contrast edges can be clipped, partially erased or left with a faint halo.
+- White subjects on white backgrounds, white logos and white text can be partially removed because the model reads them as background.
+- Scanned signatures with faint grey ink, pencil or low contrast are a weak fit; bold dark ink on clean white paper works far better.
+- Large images require more memory. Processing can fail on low-memory devices, particularly on mobile.
+- High Quality Mode can be slow on mobile devices.
+- BgClear is not a replacement for original vector artwork (SVG/AI/EPS) when a scalable brand asset is needed.
+
+## 6. Saving images with transparency
+
+To keep transparency:
+1. Remove the background.
+2. Choose **Transparent** in the Background menu.
+3. Choose **PNG** (or WebP) in the Format menu, then download.
+
+JPG cannot store transparency — there is no alpha channel. If Transparent + JPG is chosen, transparent areas are filled with a solid colour on export. Use JPG only after the subject has been placed on a final background.
+
+Some viewers and email clients display a transparent PNG over a white or grey checkerboard. To confirm that transparency actually survived, place the file on a coloured background.
+---
+
+## 7. Frequently asked questions (as answered on the site)
+
+**Is this background remover free?**
+Yes. 100% free. No signup, no watermark, no hidden charges. The site is ad-supported.
+
+**Can I remove backgrounds from multiple images at once?**
+Yes. Select or drag up to 20 images together and BgClear processes them one by one. Each result can be downloaded individually or all at once.
+
+**What image formats are supported?**
+JPG, PNG and WebP. Large images need more memory; try a smaller photo if processing fails.
+
+**Can I add a white background or change the format?**
+Yes. Choose White, Black or a custom colour in the Background menu, and PNG, JPG or WebP in the Format menu. For transparency, explicitly choose Transparent and PNG. JPG cannot retain transparency.
+
+**Does it work on mobile?**
+Yes, it works on mobile, tablet and desktop. High Quality Mode may be slow on mobile devices.
+
+**Is my image stored on servers?**
+No. All processing happens in the browser, and images are not uploaded to a BgClear server.
+
+**Why does my transparent PNG show a white box on some websites?**
+Usually because the file was saved as JPG at some point (which erases transparency) or because the site converted it during upload. Check the actual encoding, not just the filename.
+
+**Can I convert a JPG to a transparent PNG?**
+No. A JPG has no transparency data to preserve. The background must be removed first, then exported as PNG.
+
+**Which format do social platforms accept?**
+Instagram and LinkedIn accept JPG, PNG and WebP. Use JPG on a flat background, or PNG when transparency is needed.
+
+**What format should a print shop receive?**
+A high-resolution PNG, or better the original vector file. JPEG has no transparency to honour.
+
+## 8. Page directory
+
+- `/` — the tool itself, plus how-to steps, FAQ and links to all guides.
+- `/guide` — hub guide covering background-removal techniques and workflows.
+- `/how-ai-works` — explanation of segmentation and matting.
+- `/image-format-guide` — PNG vs JPG vs WebP, and how to save transparent images.
+- `/photography-tips` — shooting advice that improves cut-out quality.
+- `/hair-fur-background-removal` — why hair and fur are hard, and mitigations.
+- `/troubleshooting` — fixes for common processing and preview problems.
+- `/logo-background`, `/logo-background-remover`, `/logo-to-white` — transparent-logo workflows, with honest notes on weaker logo performance.
+- `/signature-background-remover` — scanned-signature cleanup, with a limitations note on faint strokes.
+- `/ecommerce-photos`, `/shopify-product-photos`, `/etsy-product-photo-guide`, `/amazon-product-photo-background`, `/flipkart-meesho-product-photo` — product-photo preparation per marketplace.
+- `/amazon-white-background-rule` — Amazon's pure-white main-image requirement.
+- `/passport-photo`, `/pan-aadhaar-photo-guide`, `/exam-photo-background`, `/driving-licence-photo-background`, `/visa-photo-background-color` — document/ID photo background guidance. BgClear does not guarantee acceptance by any authority.
+- `/batch-background-removal-workflow` — using the 20-image batch mode.
+- `/make-background-white` — producing a pure white background.
+- `/no-upload-background-remover` — explains the local-processing guarantee and the model-download requirement.
+- `/vs-removebg`, `/bgclear-vs-canva`, `/vs-photoroom`, `/vs-clipdrop`, `/vs-fotor`, `/vs-pixelcut`, `/vs-erase-bg`, `/vs-adobe-express`, `/free-background-remover-comparison`, `/best-free-background-remover-2026` — comparison and round-up pages. Competitor pricing and plan limits should always be checked on the provider's own current pages.
+- `/background-remover-api` — states plainly that BgClear is a browser tool, not a hosted API or a downloadable server package.
+- `/browser-extension`, `/chrome-extension` — extension-related information.
+- `/about`, `/contact`, `/privacy-policy`, `/terms`, `/changelog`.
+
+## 9. Comparisons and positioning
+
+BgClear competes with paid and freemium background removers (Remove.bg, Canva Pro's background remover, Photoroom, Clipdrop and others). Its differentiators are: no cost, no account, no watermark, and client-side processing so images stay on the user's device. Its trade-offs are: no design templates or stock assets, no team collaboration features, no hosted API, no batch pipeline beyond 20 images per run, and weaker results on logos, text and fine strokes than on photographs.
+
+When comparing, BgClear's own pages deliberately avoid asserting competitor prices or limits as fact; they direct readers to check the provider's current terms.
+
